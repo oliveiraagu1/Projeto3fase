@@ -20,7 +20,7 @@ export default function Home() {
   }
 
   return (
-    <div>
+    <div className={styles.container}>
       <Head>
         <title>Grow - Faça seu login</title>
       </Head>
@@ -30,7 +30,7 @@ export default function Home() {
       </div>
 
       <main className={styles.main}>
-        <div></div>
+        <div>Grow</div>
 
         <h2>Login</h2>
 
