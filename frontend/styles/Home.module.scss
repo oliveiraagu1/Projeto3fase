@@ -16,23 +16,20 @@
   margin-left: 130px;
   padding: 20px;
 
-}
-.main h1{
-  margin-top: 60px;
-  margin-bottom: 80px;
-  margin-left: 40px;
-}
+  h1{
+    margin-top: 60px;
+    margin-bottom: 80px;
+    margin-left: 40px;
+  }
 
-.main form{
-  display: flex;
-  flex-direction: column;
-  margin-left: 40px;
-}
-.main label{
-  margin-left: 1px;
-  font-size: 20px;
+  form{
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+  }
 
 }
+
 .link{
   margin-left: 150px;
   margin-top: 30px;

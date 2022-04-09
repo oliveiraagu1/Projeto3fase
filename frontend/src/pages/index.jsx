@@ -1,24 +1,35 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import styles from "../../styles/Home.module.scss";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import Button from "../components/ui/Button";
 import Input from "../components/ui/Input";
+import { AuthContext } from "../contexts/AuthContext";
 
 import { toast } from "react-toastify";
 
-export default function Home() {
-
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
+export default function Login() {
+    const { signIn } = useContext(AuthContext);
+    const [email, setEmail] = useState("");
+     const [password, setPassword] = useState("");
+    const [loading, setLoading] = useState(false);
 
   async function handleLogin(event) {
-    event.preventDefault();
+      event.preventDefault();
 
-    if(email === '' || password === ''){
-      return toast.warning("Preencha todos os campos!");
-   }
+      if(email === '' || password === ''){
+          return toast.warning("Preencha todos os campos!");
+      }
+      setLoading(true);
+
+      let data = {
+          email,
+          password
+      }
+      await signIn(data);
+
+      setLoading(false);
   }
 
   return (
@@ -29,7 +40,7 @@ export default function Home() {
 
         <div>
             <h2>Image</h2>
-            <div className={styles.main}>
+            <main className={styles.main}>
 
                 <h2 className={styles.logo}>Grow</h2>
                 <h1>Login</h1>
@@ -49,12 +60,14 @@ export default function Home() {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                     <Button loading={loading} type="submit">
-                        Entrar
+                        ENTRAR
                     </Button>
 
-                    <a href={"/signup"} className={styles.link}>Não tem cadastro? Cadastre-se!</a>
+                    <Link href={"/signup"} >
+                        <a className={styles.link}>Não tem cadastro? Cadastre-se!</a>
+                    </Link>
                 </form>
-            </div>
+            </main>
         </div>
     </div>
   );
