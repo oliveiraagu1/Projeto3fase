@@ -4,8 +4,10 @@
     border-radius: 5px;
     color: var(--white);
     transition: filter 0.2s;
-    width: 80%;
+    width: 316px;
     height: 40px;
+    margin-top: 35px;
+    margin-left: 100px;
 
     &:disabled{
         cursor: not-allowed;
