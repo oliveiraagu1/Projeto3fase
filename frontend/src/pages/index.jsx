@@ -52,7 +52,7 @@ export default function Home() {
                         Entrar
                     </Button>
 
-                    <a href={"www.google.com"} className={styles.link}>Não tem cadastro? Cadastre-se!</a>
+                    <a href={"/signup"} className={styles.link}>Não tem cadastro? Cadastre-se!</a>
                 </form>
             </div>
         </div>
