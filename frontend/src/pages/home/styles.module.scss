@@ -1,28 +1,52 @@
-.fullContainer{
-    background-image: radial-gradient(#E29578  #FFDDD210);
+.fullContainer {
+  background: linear-gradient(
+    145deg,
+    rgba(226, 149, 120, 1) 0%,
+    rgba(255, 221, 210, 1) 85%
+  );
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
 }
-.containerHistorico{
-      display: flex;
-      width: 500px;
-      flex-direction: column;
-      border-left: 1px solid #505050;
-      padding: 20px;
-      margin: 20px;
-      
-  }
-  .historicoUm{
-    background-image: linear-gradient(to right, #FFDDD2, #FFDDD210);
-    border-radius: 12px;
-    margin-bottom: 30px;
-    width: 215px;
-    height: 100px;
-  }
-  .historicoDois{
-    opacity: 60%;
-    background-image: linear-gradient(to right, #FFDDD2, #FFDDD210);
-    border-radius: 12px;
-    margin-bottom: 30px;
-    width: 215px;
-    height: 100px;
-  }
-  
+.burguerContainer {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 109, 119, 1) 0%,
+    rgba(131, 197, 190, 1) 100%
+  );
+  height: 50px;
+  width: 50px;
+  border: none;
+}
+
+.containerHistorico {
+  display: flex;
+  width: 500px;
+  flex-direction: column;
+  border-left: 1px solid #505050;
+  padding: 20px;
+  margin: 20px;
+}
+.historicoUm {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 221, 210, 0.2) 0%,
+    rgba(255, 221, 210, 1) 100%
+  );
+  border-radius: 12px;
+  margin-bottom: 30px;
+  width: 215px;
+  height: 100px;
+}
+.historicoDois {
+  opacity: 60%;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 221, 210, 0.2) 0%,
+    rgba(255, 221, 210, 1) 100%
+  );
+  border-radius: 12px;
+  margin-bottom: 30px;
+  width: 215px;
+  height: 100px;
+}

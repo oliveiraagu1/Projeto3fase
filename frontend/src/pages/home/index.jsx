@@ -4,6 +4,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../contexts/AuthContext";
+import { Drower } from "../../components/ui/Drower";
 
 export default function Home() {
 
@@ -11,6 +12,14 @@ export default function Home() {
 
     return(
         <section className={styles.fullContainer}>
+
+            <button className={styles.burguerContainer}>
+                <Drower />
+            </button>
+
+
+
+
             <div className={styles.containerHistorico}>
                 <div className={styles.historicoUm} >
                     <h1>#01</h1>
