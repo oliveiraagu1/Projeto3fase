@@ -1,10 +1,7 @@
 .container{
   background-image: linear-gradient(to right, #FFDDD2, #006D77);
   width: 100%;
-}
 
-.main{
-  padding: 1px;
 }
 
 .logo{
@@ -12,12 +9,12 @@
 
 }
 
-.main2{
+.main{
   border-radius: 40px;
   background: rgba(255, 255, 255, 0.3);
-  height: 640px;
-  max-width: 440px;
-  margin: 20px auto;
+  height: 650px;
+  width: 440px;
+  margin: 0 auto;
 
   h1{
     margin-top: 40px;
@@ -31,6 +28,13 @@
     flex-direction: column;
   }
 
+}
+.modalContainerMain{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .link{

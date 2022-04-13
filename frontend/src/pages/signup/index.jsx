@@ -42,9 +42,12 @@ export default function SignUp() {
                 <title>Grow - Faça seu cadastro</title>
             </Head>
 
-            <div className={styles.main}>
+                <div className={styles.modalContainerMain}>
 
-                <main className={styles.main2}>
+
+                <main className={styles.main}>
+
+
 
                     <LogoMenor />
 
@@ -80,7 +83,7 @@ export default function SignUp() {
                             onChange={ e  => setRegister(e.target.value)}
                         />
                         <Button type="submit" loading={loading}>
-                            Entrar
+                            CADASTRAR
                         </Button>
 
                         <Link href={"/"} >
@@ -88,7 +91,7 @@ export default function SignUp() {
                         </Link>
                     </form>
                 </main>
-            </div>
+                </div>
         </div>
     );
 }
