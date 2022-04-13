@@ -1,0 +1,28 @@
+.fullContainer{
+    background-image: radial-gradient(#E29578  #FFDDD210);
+}
+.containerHistorico{
+      display: flex;
+      width: 500px;
+      flex-direction: column;
+      border-left: 1px solid #505050;
+      padding: 20px;
+      margin: 20px;
+      
+  }
+  .historicoUm{
+    background-image: linear-gradient(to right, #FFDDD2, #FFDDD210);
+    border-radius: 12px;
+    margin-bottom: 30px;
+    width: 215px;
+    height: 100px;
+  }
+  .historicoDois{
+    opacity: 60%;
+    background-image: linear-gradient(to right, #FFDDD2, #FFDDD210);
+    border-radius: 12px;
+    margin-bottom: 30px;
+    width: 215px;
+    height: 100px;
+  }
+  
