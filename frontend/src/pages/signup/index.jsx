@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import styles from "./styles.module.scss";
 import Head from "next/head";
 import Link from "next/link";
+import {LogoMenor} from "../../components/Logo"
 import Button from "../../components/ui/Button";
 import Input from "../../components/ui/Input";
 import { toast } from "react-toastify";
@@ -45,33 +46,33 @@ export default function SignUp() {
 
                 <main className={styles.main2}>
 
-                    <h2 className={styles.logo}>Grow</h2>
+                    <LogoMenor />
 
                     <h1>Cadastro</h1>
 
                     <form onSubmit={handleSignup}>
-                        <label>Email:</label>
+                        <label className={styles.textLogin}>Email:</label>
                         <Input
                             placeholder="Digite o seu e-mail"
                             type="text"
                             value={email}
                            onChange={ e => setEmail(e.target.value) }
                         />
-                        <label>Senha:</label>
+                        <label className={styles.textLogin}>Senha:</label>
                         <Input
                             placeholder="Digite a sua senha"
                             type="password"
                             value={password}
                             onChange={ e => setPassword(e.target.value)}
                         />
-                        <label>Confirme a senha:</label>
+                        <label className={styles.textLogin}>Confirme a senha:</label>
                         <Input
                             placeholder="Digite novamente a senha"
                             type="password"
                             value={secondPassword}
                             onChange={ e => setSecondPassword(e.target.value)}
                         />
-                        <label>Matrícula:</label>
+                        <label className={styles.textLogin}>Matrícula:</label>
                         <Input
                             placeholder="Digite sua matrícula"
                             type="text"

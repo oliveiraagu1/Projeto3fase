@@ -1,7 +1,6 @@
 .container{
-    background-image: linear-gradient(to right, #FFDDD2, #006D77);
-    width: 100%;
-    height: 100vh;
+  background-image: linear-gradient(to right, #FFDDD2, #006D77);
+  width: 100%;
 }
 
 .main{
@@ -17,13 +16,12 @@
   border-radius: 40px;
   background: rgba(255, 255, 255, 0.3);
   height: 640px;
-  width: 641px;
-  margin-left: 600px;
-  margin-top: 80px;
+  max-width: 440px;
+  margin: 20px auto;
 
   h1{
     margin-top: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     margin-left: 40px;
   }
 
@@ -31,17 +29,24 @@
   form{
     display: flex;
     flex-direction: column;
-    margin-left: 40px;
   }
 
 }
 
 .link{
-  margin-left: 150px;
-  margin-top: 30px;
+  margin: 0 auto;
 
   &:hover{
     transform: scale(1.2);
     padding-left: 35px;
   }
+}
+
+.textLogin{
+  font-size: 18px;
+  font-weight: 400;
+  color: #000;
+  padding: 20px 0 8px 0;
+  width: 80%;
+  margin: 0 auto;
 }

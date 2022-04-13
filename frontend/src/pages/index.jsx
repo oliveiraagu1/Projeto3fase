@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import styles from "../../styles/Home.module.scss";
 import Head from "next/head";
-import Image from "next/image";
+import {Logo, LogoMenor} from "../components/Logo";
 import Link from "next/link";
 import Button from "../components/ui/Button";
 import Input from "../components/ui/Input";
@@ -37,31 +37,31 @@ export default function Login() {
        <Head>
          <title>Grow - Faça seu login</title>
        </Head>
-
-        <div>
-            <h2>Image</h2>
+        <div className={styles.modalLogin}>
+            <Logo />
             <main className={styles.main}>
-
-                <h2 className={styles.logo}>Grow</h2>
+                <LogoMenor />
                 <h1>Login</h1>
                 <form onSubmit={handleLogin}>
-                    <label>Email:</label>
+                    <label className={styles.textLogin}>Email:</label>
                     <Input
                         placeholder="Digite o seu e-mail"
                         type="text"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
-                    <label>Senha:</label>
+                    <label className={styles.textLogin}>Senha:</label>
                     <Input
                         placeholder="Digite a sua senha"
                         type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
-                    <Button loading={loading} type="submit">
-                        ENTRAR
-                    </Button>
+                    <div className={styles.MainButtonLogin}>
+                        <Button loading={loading} type="submit">
+                            ENTRAR
+                        </Button>
+                    </div>
 
                     <Link href={"/signup"} >
                         <a className={styles.link}>Não tem cadastro? Cadastre-se!</a>
