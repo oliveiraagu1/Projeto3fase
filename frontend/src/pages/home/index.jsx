@@ -4,22 +4,21 @@ import Head from "next/head";
 import Link from "next/link";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../contexts/AuthContext";
-import { Drower } from "../../components/ui/Drower";
+import Drawer from "../../components/ui/Drawer";
 import { LogoHome } from "../../components/Logo";
 
 export default function Home() {
 
-    const { user, setUser } = useContext(AuthContext);
+    const {user} = useContext(AuthContext);
+    const [visible, setVisible] = useState(false);
+
 
     return(
         <section className={styles.fullContainer}>
 
-            <button className={styles.burguerContainer}>
-                <Drower />
+            <button className={styles.burguerContainer} onClick={() => setVisible(!visible)}>
+                <Drawer visible={visible} />
             </button>
-
-
-
 
             <div className={styles.containerHistorico}>
                 <button className={styles.historicoUm} >
@@ -42,7 +41,7 @@ export default function Home() {
                 <LogoHome className={styles.filter} />
             </div>
             <footer className={styles.footer}>
-                <h1>Maria Roman Generative</h1>
+                <h1>{user.name}</h1>
             </footer>
         </section>
     )
