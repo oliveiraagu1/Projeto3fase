@@ -5,37 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ff20d61-439f-45c3-a1c0-e0d69890406e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/senai/backend/controllers/ContractController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/senai/backend/model/ContractModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/senai/backend/model/UserModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/Drawer/SubDrawer/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/Drawer/SubDrawer/styles.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/Drawer/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/src/main/java/br/com/senai/backend/GrowApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/senai/backend/GrowApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/br/com/senai/backend/controllers/ContractController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/senai/backend/controllers/ContractController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/src/main/java/br/com/senai/backend/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/senai/backend/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/br/com/senai/backend/model/ContractModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/senai/backend/model/ContractModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/br/com/senai/backend/model/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/senai/backend/model/UserModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/src/test/java/br/com/senai/backend/GrowApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/test/java/br/com/senai/backend/GrowApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/logo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vercel.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/vercel.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Logo/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Logo/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Logo/styles.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Logo/styles.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/Button/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Button/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/Button/styles.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Button/styles.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/Drower/index.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/Input/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Input/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/Input/styles.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Input/styles.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contexts/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/contexts/AuthContext.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/_app.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/_document.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_document.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/signup/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/signup/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/signup/styles.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/signup/styles.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/Home.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/Home.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/globals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +65,7 @@
       <workItem from="1649871733544" duration="3000" />
       <workItem from="1650069141375" duration="1309000" />
       <workItem from="1650144633452" duration="4356000" />
+      <workItem from="1650335178054" duration="5000" />
     </task>
     <servers />
   </component>
