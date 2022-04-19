@@ -1,35 +1,36 @@
-.container{
+.container {
   background-image: linear-gradient(to right, #FFDDD2, #006D77);
   width: 100%;
 
 }
 
-.logo{
+.logo {
   margin-left: 18rem;
 
 }
 
-.main{
+.main {
   border-radius: 40px;
   background: rgba(255, 255, 255, 0.3);
   height: 650px;
   width: 440px;
   margin: 0 auto;
 
-  h1{
+  h1 {
     margin-top: 40px;
     margin-bottom: 30px;
     margin-left: 40px;
   }
 
 
-  form{
+  form {
     display: flex;
     flex-direction: column;
   }
 
 }
-.modalContainerMain{
+
+.modalContainerMain {
   height: 100vh;
   width: 100%;
   display: flex;
@@ -37,16 +38,16 @@
   align-items: center;
 }
 
-.link{
+.link {
   margin: 0 auto;
 
-  &:hover{
+  &:hover {
     transform: scale(1.2);
     padding-left: 35px;
   }
 }
 
-.textLogin{
+.textLogin {
   font-size: 18px;
   font-weight: 400;
   color: #000;

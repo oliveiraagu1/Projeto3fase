@@ -5,17 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ff20d61-439f-45c3-a1c0-e0d69890406e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/senai/backend/controllers/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/frontend.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Logo/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Logo/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Logo/styles.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Logo/styles.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/signup/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/signup/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/signup/styles.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/signup/styles.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/Home.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/Home.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/br/com/senai/backend/GrowApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/senai/backend/GrowApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/br/com/senai/backend/controllers/ContractController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/senai/backend/controllers/ContractController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/br/com/senai/backend/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/senai/backend/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/br/com/senai/backend/model/ContractModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/senai/backend/model/ContractModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/br/com/senai/backend/model/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/br/com/senai/backend/model/UserModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/java/br/com/senai/backend/GrowApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/test/java/br/com/senai/backend/GrowApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +61,11 @@
       <workItem from="1649466729744" duration="3603000" />
       <workItem from="1649518939966" duration="4519000" />
       <workItem from="1649787609869" duration="6000" />
-      <workItem from="1649824115473" duration="1926000" />
+      <workItem from="1649824115473" duration="2145000" />
+      <workItem from="1649871733544" duration="3000" />
+      <workItem from="1650069141375" duration="1309000" />
+      <workItem from="1650144633452" duration="4356000" />
+      <workItem from="1650335178054" duration="5000" />
     </task>
     <servers />
   </component>
