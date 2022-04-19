@@ -36,6 +36,7 @@ export default function Login() {
     <div className={styles.container}>
        <Head>
          <title>Grow - Faça seu login</title>
+         
        </Head>
         <div className={styles.modalLogin}>
             <Logo />
