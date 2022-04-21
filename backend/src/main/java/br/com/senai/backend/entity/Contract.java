@@ -1,6 +1,8 @@
-package br.com.senai.backend.model;
+package br.com.senai.backend.entity;
 
 import java.util.Date;
+
+import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,20 +18,30 @@ import static javax.persistence.CascadeType.ALL;
 @NoArgsConstructor
 @Entity
 @Table(name = "contracts")
-public class ContractModel {
+public class Contract {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column @NotNull
     private String name;
+
+    @Column @NotNull
     private Date date;
+
+    @Column @NotNull
     private String typeProperty;
+
+    @Column @NotNull
     private String typeAgreement;
+
+    @Column @NotNull
     private String propertyCode;
 
     @ManyToOne(cascade = ALL)
     @JoinColumn(name="user_id", referencedColumnName = "id", nullable = false)
-    private UserModel userModel;
+    private User user;
 
 
 

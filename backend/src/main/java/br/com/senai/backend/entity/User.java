@@ -1,4 +1,4 @@
-package br.com.senai.backend.model;
+package br.com.senai.backend.entity;
 
 import lombok.*;
 import javax.persistence.*;
@@ -10,17 +10,26 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "users")
-public class UserModel {
+public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+
     private String name;
+
+
     private String email;
+
+
     private String password;
+
+
     private Integer registration;
+
     @OneToMany(mappedBy="id", cascade = CascadeType.ALL)
-    private List<ContractModel> contracts;
+    private List<Contract> contracts;
 
 
 
