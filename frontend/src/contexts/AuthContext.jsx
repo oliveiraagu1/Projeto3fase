@@ -1,70 +1,70 @@
-import {createContext, useState} from "react";
-import {api} from "../services/api.js";
+import { createContext, useState } from "react";
+import { api } from "../services/api.js";
 import Router from "next/router";
-import {toast} from "react-toastify";
+import { toast } from "react-toastify";
 
 export const AuthContext = createContext({});
 
-export function AuthProvider({children}) {
-    const [user, setUser] = useState({
-        id: "",
-        name: "",
-        email: "",
-        register: "",
-    });
+export function AuthProvider({ children }) {
+  const [user, setUser] = useState({
+    id: "",
+    name: "",
+    email: "",
+    password: "",
+    register: "",
+  });
 
-    async function signIn({ email, password }) {
-
-        try {
-            /* const response = await api.post('verRota', {
+  async function signIn({ email, password }) {
+    try {
+      /* const response = await api.post('verRota', {
                       email,
                       password
                   });*/
 
-            setUser({
-                id: 1,
-                name: "Gustavo",
-                email: email,
-                register: 10328731
-            });
+      setUser({
+        id: 1,
+        name: "Gustavo",
+        email: email,
+        register: 10328731,
+      });
 
-            // Verificar se vai ter token // Passar para próximas requisições o nosso token
-            //api.defaults.headers['Authorization'] = `Bearer ${token}`;
-            toast.success("Logado com sucesso!");
+      // Verificar se vai ter token // Passar para próximas requisições o nosso token
+      //api.defaults.headers['Authorization'] = `Bearer ${token}`;
+      toast.success("Logado com sucesso!");
 
-            //Redirecionar para a página Home
-            await Router.push("/home");
-        } catch (err) {
-            toast.error("Error ao acessar!");
-        }
+      //Redirecionar para a página Home
+      await Router.push("/home");
+    } catch (err) {
+      toast.error("Error ao acessar!");
     }
+  }
 
-    async function signUp({email, password, name, register}) {
-        try {
-            /*const response = await api.post('verRota', {
-                      name,
-                      email,
-                      password
-                  });*/
+  async function signUp({ email, password, name, registration }) {
+    try {
+      const response = await api.post("users/signup", {
+        email,
+        name,
+        password,
+        registration,
+      });
 
-
-            toast.success("Conta criada com sucesso!");
-            await Router.push("/");
-        } catch (err) {
-            toast.error("Erro ao cadastrar!");
-        }
+      toast.success("Conta criada com sucesso!");
+      await Router.push("/");
+    } catch (err) {
+      toast.error("Erro ao cadastrar!");
     }
+  }
 
-    return (
-        <AuthContext.Provider
-            value={{
-                user,
-                setUser,
-                signIn,
-                signUp,
-            }}
-        >
-            {children}
-        </AuthContext.Provider>
-    );
+  return (
+    <AuthContext.Provider
+      value={{
+        user,
+        setUser,
+        signIn,
+        signUp,
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
 }

@@ -14,25 +14,26 @@ export default function SignUp() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
-    const [register, setRegister] = useState("");
+    const [registration, setRegistration] = useState("");
     const [loading, setLoading] = useState(false);
 
 
     async function handleSignup(event) {
         event.preventDefault();
 
-        if (email === '' || password === '' || name === '' || register === '') {
+        if (email === '' || password === '' || name === '' || registration === '') {
             return toast.warning("Preencha todos os campos!");
         }
         setLoading(true);
 
         let data = {
+            name,
             email,
             password,
-            name,
-            register
-        }
+            registration
+        };
         await signUp(data);
+        
         setLoading(false);
     }
 
@@ -78,8 +79,8 @@ export default function SignUp() {
                         <Input
                             placeholder="Digite sua matrícula"
                             type="text"
-                            value={register}
-                            onChange={e => setRegister(e.target.value)}
+                            value={registration}
+                            onChange={e => setRegistration(e.target.value)}
                         />
                         <Button type="submit" loading={loading}>
                             CADASTRAR
