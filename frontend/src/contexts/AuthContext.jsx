@@ -21,12 +21,7 @@ export function AuthProvider({ children }) {
                       password
                   });*/
 
-      setUser({
-        id: 1,
-        name: "Gustavo",
-        email: email,
-        register: 10328731,
-      });
+      console.log("logado com user: " + email + " " + password);
 
       // Verificar se vai ter token // Passar para próximas requisições o nosso token
       //api.defaults.headers['Authorization'] = `Bearer ${token}`;
@@ -39,8 +34,11 @@ export function AuthProvider({ children }) {
     }
   }
 
-  async function signUp({ email, password, name, registration }) {
+  async function signUp({ email, name, password, registration }) {
     try {
+
+      console.log(email, password, name, registration)
+
       const response = await api.post("users/signup", {
         email,
         name,
