@@ -28,7 +28,11 @@ export function LogoHome(){
 export function LogoMenor(){
     return(
         <div className={styles.containerLogoMenor}>
-            <Image src={imageLogo} width={50} height={50} alt="Image small" className={styles.logoMenor} />
+            {/* <Image src={imageLogo} width={50} height={50} alt="Image small" className={styles.logoMenor} /> */}
+            <Image src={g} width={20} height={20} alt="Letra G" className={styles.logoMenor} style={{animationDelay: "0ms"}} />
+            <Image src={r} width={20} height={20} alt="Letra R" className={styles.logoMenor} style={{animationDelay: "100ms"}} />
+            <Image src={o} width={20} height={20} alt="Letra O" className={styles.logoMenor} style={{animationDelay: "200ms"}} />
+            <Image src={w} width={40} height={40} alt="Letra W" className={styles.logoMenor} style={{animationDelay: "300ms"}} />
         </div>
     )
 }
