@@ -2,10 +2,12 @@
 .containerLogoMenor {
   display: flex;
   justify-content: center;
+  align-items: baseline;
 }
-.logoMenor{
-  animation: fadeIn 3s ease-in-out;
+.containerLogoMenor > span{
+  overflow: unset!important;
 }
+
 @keyframes fadeIn {
   0% { 
     opacity: 0; 
@@ -30,5 +32,15 @@
   }
   100% {
     transform: translate(0px, 0px);
+  }
+}
+
+@media(max-width: 1020px){
+  .containerLogo{
+    display: none;
+  }
+  .logoMenor{
+    // animation: fadeIn 3s ease-in-out;
+    animation: logow 2s linear infinite backwards;
   }
 }
