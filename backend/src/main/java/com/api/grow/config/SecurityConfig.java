@@ -1,4 +1,4 @@
-package br.com.senai.backend.security;
+package com.api.grow.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -13,7 +13,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public PasswordEncoder passwordEncoder(){
-            return new BCryptPasswordEncoder();
+        return new BCryptPasswordEncoder();
     }
 
     @Override
