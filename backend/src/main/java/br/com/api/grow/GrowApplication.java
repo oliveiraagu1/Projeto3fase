@@ -1,10 +1,10 @@
-package br.com.senai.backend;
+package br.com.api.grow;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 
-
-@SpringBootApplication
+@SpringBootApplication()
 public class GrowApplication {
 
     public static void main(String[] args) {
