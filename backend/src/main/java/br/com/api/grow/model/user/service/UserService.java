@@ -1,9 +1,7 @@
-package br.com.api.grow.service;
+package br.com.api.grow.model.user.service;
 
-import br.com.api.grow.model.UserModel;
-import br.com.api.grow.repository.UserRepository;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import br.com.api.grow.model.user.entity.UserModel;
+import br.com.api.grow.model.user.repository.UserRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -23,6 +21,7 @@ public class UserService {
 
 
     public UserModel create(UserModel userModel){
+
        String encodedPassword =  passwordEncoder.encode(userModel.getPassword());
        userModel.setPassword(encodedPassword);
         return userRepository.save(userModel);
