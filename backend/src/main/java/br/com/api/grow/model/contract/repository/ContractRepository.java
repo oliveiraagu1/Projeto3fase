@@ -1,6 +1,6 @@
-package br.com.api.grow.repository;
+package br.com.api.grow.model.contract.repository;
 
-import br.com.api.grow.model.ContractModel;
+import br.com.api.grow.model.contract.entity.ContractModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

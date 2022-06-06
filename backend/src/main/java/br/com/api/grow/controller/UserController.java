@@ -1,10 +1,9 @@
 package br.com.api.grow.controller;
 
-import br.com.api.grow.model.UserModel;
-import br.com.api.grow.service.UserService;
-import lombok.Getter;
-import org.apache.catalina.User;
-import org.springframework.beans.factory.annotation.Autowired;
+import br.com.api.grow.model.user.DTO.UserDTO;
+import br.com.api.grow.model.user.DTO.UserResponseDTO;
+import br.com.api.grow.model.user.entity.UserModel;
+import br.com.api.grow.model.user.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,11 +20,12 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping("/created")
-    public ResponseEntity<UserModel> created(@RequestBody UserModel user){
 
-        UserModel userCreated = userService.create(user);
-        return new ResponseEntity<UserModel>(userCreated, HttpStatus.CREATED);
+    @PostMapping("/created")
+    public ResponseEntity<UserResponseDTO> created(@RequestBody UserDTO dto){
+
+        UserModel userCreated = userService.create(dto.transformaParaObjeto());
+        return new ResponseEntity<UserResponseDTO>(UserResponseDTO.transformEmDTO(userCreated), HttpStatus.CREATED);
     }
 
     @GetMapping("/list")

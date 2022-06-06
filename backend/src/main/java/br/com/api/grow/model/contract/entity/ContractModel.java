@@ -1,6 +1,7 @@
-package br.com.api.grow.model;
+package br.com.api.grow.model.contract.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import br.com.api.grow.model.role.entity.RoleModel;
+import br.com.api.grow.model.user.entity.UserModel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,7 +15,7 @@ import java.util.Date;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "tb_contract")
+@Table(name = "contracts")
 public class ContractModel {
 
     @Id
@@ -39,7 +40,24 @@ public class ContractModel {
     @Column(length = 100,nullable = false)
     private String typeAgreement;
 
-    @JsonIgnore
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.MERGE)
     private UserModel user;
+
+    public ContractModel(
+            String nameClient,
+            Date date,
+            Integer typeProperty,
+            Integer registration,
+            Integer propertyCode,
+            String typeAgreement,
+            Long userId
+            ) {
+        this.nameClient = nameClient;
+        this.date = date;
+        this.typeProperty = typeProperty;
+        this.registration = registration;
+        this.propertyCode = propertyCode;
+        this.typeAgreement = typeAgreement;
+        this.user = new UserModel(userId);
+    }
 }

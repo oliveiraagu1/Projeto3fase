@@ -1,6 +1,7 @@
-package br.com.api.grow.model;
+package br.com.api.grow.model.role.entity;
 
 
+import br.com.api.grow.model.user.entity.UserModel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "tb_role")
+@Table(name = "roles")
 public class RoleModel {
 
     @Id
@@ -21,5 +22,14 @@ public class RoleModel {
     private Long id;
 
     private String name;
+
+    @OneToOne(mappedBy = "roles")
+    private UserModel userModel;
+
+
+    public RoleModel(Long id){
+        this.id = id;
+    }
+
 
 }
