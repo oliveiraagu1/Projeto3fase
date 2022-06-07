@@ -1,7 +1,7 @@
 import styles from "./styles.module.scss"
 
 
-export default function SubDrawer(){
+export default function SubSlideBar(){
     return(
         <section className={styles.openedDrawer}>
             <div className={styles.title} >GROW</div>
