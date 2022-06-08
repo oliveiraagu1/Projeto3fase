@@ -4,7 +4,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../contexts/AuthContext";
-import Drawer from "../../components/ui/Drawer";
+import SlideBar from "../../components/ui/SlideBar";
 import { LogoHome } from "../../components/Logo";
 import PieChart from "./PieChart";
 import { UserData } from "./Data";
@@ -21,7 +21,7 @@ export default function Home() {
         className={styles.burguerContainer}
         onClick={() => setVisible(!visible)}
       >
-        <Drawer visible={visible} />
+        <SlideBar visible={visible} />
       </button>
 
     <div className={styles.mainHome}>
