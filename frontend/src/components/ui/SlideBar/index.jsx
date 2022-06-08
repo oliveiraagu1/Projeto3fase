@@ -1,8 +1,8 @@
 import Image from "next/image";
 import imageDrawer from "../../../../public/assets/hamburguer.svg";
-import SubDrawer from "./SubDrawer";
+import SubDrawer from "./SubSlide";
 
-export default function Drawer({ visible }){
+export default function SlideBar({ visible }){
     return(
        <div>
            {visible ? (
