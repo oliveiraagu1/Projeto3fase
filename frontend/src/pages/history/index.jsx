@@ -14,12 +14,12 @@ export default function History() {
         <title>Grow - Tela contrato</title>
       </Head>
 
-      <button
+       <button
         className={styles.burguerContainer}
         onClick={() => setVisible(!visible)}
       >
-        <SlideBar visible={visible} />
-      </button>
+      <SlideBar visible={visible} />
+      </button> 
 
       <div className={styles.image}>
         <LogoMenor />
