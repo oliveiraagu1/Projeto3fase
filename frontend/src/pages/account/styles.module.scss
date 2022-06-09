@@ -1,0 +1,26 @@
+.container{
+    background: radial-gradient(#006D77, #83C5BE);
+    width: 100vw;
+}
+.modalAccount{
+    max-width: 500px;
+    height: 400px;
+    background: #ffffffe6;
+    border-radius: 90px;
+    margin: 0 auto;
+}
+.photo{
+    display: flex;
+    justify-content: center;
+}
+.buttonMyAccount{
+    background: #fff;
+    border: none;
+    height: 40px;
+    border-radius: 20px;
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0 20px;
+
+}
