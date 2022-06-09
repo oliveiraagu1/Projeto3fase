@@ -1,0 +1,41 @@
+.openedSlidebar {
+    display: flex;
+    width: 230px;
+    height: 550px;
+    background-color: #FFDDD2;
+    justify-content: center;
+}
+
+.burguerSlider{
+    display: flex;
+    justify-content: end;
+}
+.buttonsContainer {
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+ 
+}
+.button {
+    background: none;
+    border: none;
+    padding: 0 10px 0 10px;
+}
+
+.lowOpacity{
+    background: rgb(0, 118, 135, 0.2);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+}
+.fullOpacity{
+    background: rgb(0, 109, 119);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+}

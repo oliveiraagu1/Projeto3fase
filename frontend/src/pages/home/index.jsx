@@ -25,7 +25,7 @@ export default function Home() {
       </button>
 
     <div className={styles.mainHome}>
-      <div className={styles.containerHistorico}>
+      <div className={visible ? styles.containerHistorico : styles.containerHistoricoClosed}  >
         <button className={styles.historicoUm}>
           <h1>#01</h1>
           <h2>Aluguel 10293</h2>
