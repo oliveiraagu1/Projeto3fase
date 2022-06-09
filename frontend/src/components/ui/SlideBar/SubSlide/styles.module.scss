@@ -1,14 +1,14 @@
 .openedSlidebar {
     display: flex;
     width: 230px;
-    height: 550px;
+    height: 100vh;
     background-color: #FFDDD2;
     justify-content: center;
 }
 
 .burguerSlider{
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 .buttonsContainer {
     height: 340px;
