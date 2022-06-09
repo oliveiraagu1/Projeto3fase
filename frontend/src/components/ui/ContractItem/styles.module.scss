@@ -1,0 +1,27 @@
+.container {
+    background: #ffffff66; 
+    border-radius: 16px;
+    height: 91px;
+    max-width: 300px;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 100%;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 20px;
+
+}
+
+.register {
+    color: #FFF;
+    font-size: 14px;
+    line-height: 20px;
+}
