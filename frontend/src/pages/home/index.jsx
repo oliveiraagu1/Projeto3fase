@@ -54,7 +54,7 @@ export default function Home() {
     </div>
 
       <footer className={styles.footer}>
-        <h1>{user.name}</h1>
+        <p>{user.name}</p>
       </footer>
     </section>
   );

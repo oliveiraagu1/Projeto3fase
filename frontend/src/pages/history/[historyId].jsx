@@ -1,6 +1,6 @@
 
 
-export default function ContractItem(){
+export default function HistoryItem(){
     return(
         <>
          <div>.asuidhas8dhsuiad..</div>
