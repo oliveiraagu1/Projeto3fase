@@ -22,7 +22,7 @@ export default function myAccount() {
                 </div>
                 <div className={styles.dados}>
                 <p>Nome:</p><p>{user.nome}</p>
-                <p>E-mail:</p>
+                <p>E-mail:</p><p>{user.email}</p>
                 <p>Senha: **********</p>
                 <p>Minha matricula:</p>
                 </div>
