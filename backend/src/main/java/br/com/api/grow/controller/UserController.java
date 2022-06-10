@@ -1,5 +1,7 @@
 package br.com.api.grow.controller;
 
+import br.com.api.grow.model.user.DTO.JwtRequest;
+import br.com.api.grow.model.user.DTO.JwtResponse;
 import br.com.api.grow.model.user.DTO.UserDTO;
 import br.com.api.grow.model.user.DTO.UserResponseDTO;
 import br.com.api.grow.model.user.entity.UserModel;
@@ -27,6 +29,19 @@ public class UserController {
         UserModel userCreated = userService.create(dto.transformaParaObjeto());
         return new ResponseEntity<UserResponseDTO>(UserResponseDTO.transformEmDTO(userCreated), HttpStatus.CREATED);
     }
+
+    @PostMapping("/session")
+    public ResponseEntity<?> session(@RequestBody JwtRequest user){
+
+        try{
+             JwtResponse userAuth = userService.authenticate(user);
+            return ResponseEntity.status(HttpStatus.OK).body(userAuth);
+        }
+        catch (RuntimeException e ){
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e);
+        }
+    }
+
 
     @GetMapping("/list")
     public ResponseEntity<List<UserModel>> listUser() {
