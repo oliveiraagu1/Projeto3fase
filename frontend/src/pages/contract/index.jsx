@@ -14,17 +14,16 @@ export default function Contract() {
         <title>Grow - Tela contrato</title>
       </Head>
 
+    <div className={styles.containerLogoSlideBar}>
       <button
         className={styles.burguerContainer}
         onClick={() => setVisible(!visible)}
       >
         <SlideBar visible={visible} />
       </button>
-
-      <div className={styles.image}>
         <LogoMenor />
-      </div>
-      <div>
+    </div>
+      <div className={styles.titleHistorico}>
         <h1>Meu histórico</h1>
       </div>
 

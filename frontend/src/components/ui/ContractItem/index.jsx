@@ -10,7 +10,7 @@ export default function ContractItem({ data }) {
           <div className={styles.icon}>
             <img src='./assets/iconEdit.png'/>
           </div>
-          <div>
+          <div className={styles.containerInfosContract}>
             <p className={styles.name}>Contrato Anual</p>
             <p className={styles.register}>12050568</p>
           </div>
