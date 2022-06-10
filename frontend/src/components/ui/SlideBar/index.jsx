@@ -1,4 +1,3 @@
-import { useState, useContext } from "react";
 import Image from "next/image";
 import imageSubSlide from "../../../../public/assets/hamburguer.svg";
 import SubSlide from "./SubSlide";
