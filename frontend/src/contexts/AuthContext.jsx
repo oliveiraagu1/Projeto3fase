@@ -28,7 +28,7 @@ export function AuthProvider({ children }) {
       toast.success("Logado com sucesso!");
 
       //Redirecionar para a página Home
-      await Router.push("/home");
+      //await Router.push("/home");
     } catch (err) {
       toast.error("Error ao acessar!");
     }
@@ -36,8 +36,7 @@ export function AuthProvider({ children }) {
 
   async function signUp({ email, name, password, registration }) {
     try {
-
-      console.log(email, password, name, registration)
+      console.log(email, password, name, registration);
 
       const response = await api.post("users/signup", {
         email,

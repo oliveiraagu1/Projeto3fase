@@ -9,7 +9,7 @@ import lombok.Getter;
 
 import java.util.Date;
 
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 @Getter
 public class ContractResponseDTO {
 

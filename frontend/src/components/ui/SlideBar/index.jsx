@@ -1,15 +1,16 @@
 import Image from "next/image";
-import imageDrawer from "../../../../public/assets/hamburguer.svg";
-import SubDrawer from "./SubSlide";
+import imageSubSlide from "../../../../public/assets/hamburguer.svg";
+import SubSlide from "./SubSlide";
 
 export default function SlideBar({ visible }){
+
     return(
        <div>
            {visible ? (
-               <SubDrawer/>
+               <SubSlide/>
            ) : (
                <div>
-                   <Image src={imageDrawer} width={20} height={20}  alt="Image drawer"/>
+                   <Image src={imageSubSlide} width={20} height={20}  alt="Image SubSlide"/>
                </div>
            )}
        </div>

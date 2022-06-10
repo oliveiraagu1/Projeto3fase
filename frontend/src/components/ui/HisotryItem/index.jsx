@@ -2,9 +2,9 @@ import Link from "next/link";
 import styles from "./styles.module.scss";
 import { FiMoreVertical } from "react-icons/fi";
 
-export default function ContractItem({ data }) {
+export default function HistoryItem({ data }) {
   return (
-    <Link href={`/contract/${data.id}`}>
+    <Link href={`/history/${data.id}`}>
       <a className={styles.container}>
         <div className={styles.info}>
           <div className={styles.icon}>
