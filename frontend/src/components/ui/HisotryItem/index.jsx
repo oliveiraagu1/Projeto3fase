@@ -10,7 +10,7 @@ export default function HistoryItem({ data }) {
           <div className={styles.icon}>
             <img src='./assets/iconEdit.png'/>
           </div>
-          <div>
+          <div className={styles.containerInfosContract}>
             <p className={styles.name}>{data.nameClient}</p>
             <p className={styles.register}>{data.propertyCode}</p>
           </div>

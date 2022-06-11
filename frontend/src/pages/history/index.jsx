@@ -50,7 +50,6 @@ export default function History() {
         {contract.map( (item) => (
           <React.Fragment key={item.id}>
             <HistoryItem data={item} />
-
           </React.Fragment>
         ))}
       </div>
