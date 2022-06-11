@@ -11,8 +11,8 @@ export default function HistoryItem({ data }) {
             <img src='./assets/iconEdit.png'/>
           </div>
           <div className={styles.containerInfosContract}>
-            <p className={styles.name}>Contrato Anual</p>
-            <p className={styles.register}>12050568</p>
+            <p className={styles.name}>{data.nameClient}</p>
+            <p className={styles.register}>{data.propertyCode}</p>
           </div>
           <FiMoreVertical size={20} color='#545454' />
         </div>
