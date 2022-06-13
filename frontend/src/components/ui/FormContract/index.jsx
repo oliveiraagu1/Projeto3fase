@@ -8,14 +8,18 @@ import * as yup from "yup";
 
 const schema = yup
   .object({
-    email: yup
+    name: yup.string().required("Campo obrigatório!"),
+    registration: yup
       .string()
-      .email("Precisa ser um e-mail válido!")
+      .min(3, "A matrícula precisa ter no mínimo 3 caracteres")
       .required("Campo obrigatório!"),
-    password: yup
+    date: yup
       .string()
-      .min(3, "A senha precisa ter no mínimo 3 caracteres")
-      .required("Campo obrigatório!"),
+      .required("Campo obrigátorio!")
+      .default(() => new Date()),
+    propertyCode: yup.string().required("Campo obrigátorio!"),
+    typeProperty: yup.string().required("Campo obrigátorio!"),
+    typeAgreemnet: yup.string().required("Campo obrigátorio!"),
   })
   .required();
 
@@ -31,10 +35,12 @@ export function FormContract() {
   const { signIn } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
 
+  console.log(errors);
+
   async function handleLogin(data) {
-    setLoading(true);
-    await signIn(data);
-    setLoading(false);
+    // setLoading(true);
+    // await signIn(data);
+    // setLoading(false);
   }
   return (
     <form onSubmit={handleSubmit(handleLogin)} className={styles.form}>
@@ -55,56 +61,65 @@ export function FormContract() {
       <input
         {...register("registration")}
         className={
-          errors.email?.password === "required" ||
-          errors.password?.type === "min"
-            ? styles.inputError
-            : styles.input
+          errors.registration?.type === "min" ? styles.inputError : styles.input
         }
         type="number"
         placeholder="Digite sua matrícula"
       />
-      <p className={styles.errors}>{errors.password?.message}</p>
+      <p className={styles.errors}>{errors.registration?.message}</p>
 
       <label className={styles.textLogin}>Data:</label>
       <input
         {...register("date")}
         className={
-          errors.email?.password === "required" ||
-          errors.password?.type === "min"
-            ? styles.inputError
-            : styles.input
+          errors.date?.type === "required" ? styles.inputError : styles.input
         }
         type="date"
       />
-      <p className={styles.errors}>{errors.password?.message}</p>
+      <p className={styles.errors}>{errors.date?.message}</p>
 
       <label className={styles.textLogin}>Código do imóvel:</label>
       <input
-        {...register("date")}
+        {...register("propertyCode")}
         className={
-          errors.email?.password === "required" ||
-          errors.password?.type === "min"
+          errors.propertyCode?.type === "required"
             ? styles.inputError
             : styles.input
         }
         type="number"
       />
-      <p className={styles.errors}>{errors.password?.message}</p>
+      <p className={styles.errors}>{errors.propertyCode?.message}</p>
 
       <label className={styles.textLogin}>Tipo de imóvel:</label>
-      <select {...register("date")} className={styles.input}>
+      <select
+        {...register("typeProperty")}
+        className={
+          errors.typeProperty?.type === "required"
+            ? styles.inputError
+            : styles.input
+        }
+      >
+        <option value="">Selecione</option>
         <option value="1">Casa</option>
         <option value="2">Apartamento</option>
       </select>
 
-      <p className={styles.errors}>{errors.password?.message}</p>
+      <p className={styles.errors}>{errors.typeProperty?.message}</p>
 
       <label className={styles.textLogin}>Tipo de contrato:</label>
-      <select {...register("date")} className={styles.input}>
+      <select
+        {...register("typeAgreemnet")}
+        className={
+          errors.typeAgreemnet?.type === "required"
+            ? styles.inputError
+            : styles.input
+        }
+      >
+        <option value="">Selecione</option>
         <option value="1">Venda</option>
         <option value="2">Aluguel</option>
       </select>
-      <p className={styles.errors}>{errors.password?.message}</p>
+      <p className={styles.errors}>{errors.typeAgreemnet?.message}</p>
 
       <Button className={styles.button} loading={loading} type="submit">
         CADASTRAR
