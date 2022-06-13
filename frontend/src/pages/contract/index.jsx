@@ -24,14 +24,14 @@ export default function Contract() {
       <div className={styles.image}>
         <LogoMenor />
       </div>
-    
+
       <main className={styles.main}>
         <div className={styles.title}>
           <h1>Registe um contrato</h1>
         </div>
 
-        <div>
-            <FormContract/>
+        <div className={styles.grid}>
+          <FormContract />
         </div>
       </main>
 
