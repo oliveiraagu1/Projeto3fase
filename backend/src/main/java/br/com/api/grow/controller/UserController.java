@@ -1,5 +1,6 @@
 package br.com.api.grow.controller;
 
+import br.com.api.grow.model.user.DTO.SessionDTO;
 import br.com.api.grow.model.user.DTO.UserDTO;
 import br.com.api.grow.model.user.DTO.UserResponseDTO;
 import br.com.api.grow.model.user.entity.UserModel;
@@ -19,6 +20,16 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
+
+
+//    @PostMapping("/session")
+//    public ResponseEntity<UserResponseDTO> login(@RequestBody SessionDTO dto){
+//
+//
+//        UserModel userCreated = userService.create(dto.transformaParaObjeto());
+//        return new ResponseEntity<UserResponseDTO>(UserResponseDTO.transformEmDTO(userCreated), HttpStatus.CREATED);
+//
+//    }
 
 
     @PostMapping("/created")

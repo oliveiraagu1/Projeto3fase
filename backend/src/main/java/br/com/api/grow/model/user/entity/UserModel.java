@@ -50,5 +50,10 @@ public class UserModel {
         this.id = id;
     }
 
+    public UserModel(String name, String password){
+        this.name = name;
+        this.password = password;
+    }
+
 
 }

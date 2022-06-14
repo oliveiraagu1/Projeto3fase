@@ -27,6 +27,13 @@ public class UserService {
         return userRepository.save(userModel);
     }
 
+//    public UserModel session(UserModel userModel){
+//
+//        String encodedPassword =  passwordEncoder.encode(userModel.getPassword());
+//
+//        return userRepository.findAll();
+//    }
+
 
    public List<UserModel> listUser(){
        return userRepository.findAll();

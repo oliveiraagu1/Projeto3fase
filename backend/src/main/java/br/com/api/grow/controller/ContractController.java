@@ -22,9 +22,10 @@ public class ContractController {
         this.contractService = contractService;
     }
 
-    @GetMapping("/list")
-    public ResponseEntity<List<ContractModel>> created(){
-        return new ResponseEntity<>(contractService.listContract(), HttpStatus.OK);
+    @GetMapping("/list/{userId}")
+    public ResponseEntity<List<ContractResponseDTO>> listContract(@PathVariable Long userId){
+
+        return new ResponseEntity<>(contractService.listContractUserId(userId), HttpStatus.OK);
     }
 
     @PostMapping("/created")
