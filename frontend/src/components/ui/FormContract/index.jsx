@@ -40,98 +40,106 @@ export function FormContract() {
     // setLoading(false);
   }
   return (
-    <form onSubmit={handleSubmit(handleLogin)} className={styles.form}>
-      <div>
-        <label className={styles.textLogin}>Nome:</label>
-        <input
-          {...register("name")}
-          className={
-            errors.name?.type === "required" || errors.name?.type === "name"
-              ? styles.inputError
-              : styles.input
-          }
-          type="text"
-          placeholder="Nome do contrato"
-        />
-        <p className={styles.errors}>{errors.name?.message}</p>
+    <div className={styles.mainContainer}>
+      <div className={styles.title}>
+        <h1>Registe um contrato</h1>
       </div>
 
-      <div>
-        <label className={styles.textLogin}>Matrícula funcionário:</label>
-        <input
-          {...register("registration")}
-          className={
-            errors.registration?.type === "min"
-              ? styles.inputError
-              : styles.input
-          }
-          type="number"
-          placeholder="Digite sua matrícula"
-        />
-        <p className={styles.errors}>{errors.registration?.message}</p>
-      </div>
+      <form onSubmit={handleSubmit(handleLogin)} className={styles.form}>
+        <div className={styles.content}>
+          <label className={styles.textLogin}>Nome:</label>
+          <input
+            {...register("name")}
+            className={
+              errors.name?.type === "required" || errors.name?.type === "name"
+                ? styles.inputError
+                : styles.input
+            }
+            type="text"
+            placeholder="Nome do contrato"
+          />
+          <p className={styles.errors}>{errors.name?.message}</p>
+        </div>
 
-      <div>
-        <label className={styles.textLogin}>Data:</label>
-        <input
-          {...register("date")}
-          className={
-            errors.date?.type === "required" ? styles.inputError : styles.input
-          }
-          type="date"
-        />
-        <p className={styles.errors}>{errors.date?.message}</p>
-      </div>
-      <div>
-        <label className={styles.textLogin}>Código do imóvel:</label>
-        <input
-          {...register("propertyCode")}
-          className={
-            errors.propertyCode?.type === "required"
-              ? styles.inputError
-              : styles.input
-          }
-          type="number"
-          placeholder="Digite o código do imóvel"
-        />
-        <p className={styles.errors}>{errors.propertyCode?.message}</p>
-      </div>
-      <div>
-        <label className={styles.textLogin}>Tipo de imóvel:</label>
-        <select
-          {...register("typeProperty")}
-          className={
-            errors.typeProperty?.type === "required"
-              ? styles.inputError
-              : styles.input
-          }
-        >
-          <option value="">Selecione</option>
-          <option value="1">Casa</option>
-          <option value="2">Apartamento</option>
-        </select>
+        <div className={styles.content}>
+          <label className={styles.textLogin}>Matrícula funcionário:</label>
+          <input
+            {...register("registration")}
+            className={
+              errors.registration?.type === "min"
+                ? styles.inputError
+                : styles.input
+            }
+            type="number"
+            placeholder="Digite sua matrícula"
+          />
+          <p className={styles.errors}>{errors.registration?.message}</p>
+        </div>
 
-        <p className={styles.errors}>{errors.typeProperty?.message}</p>
+        <div className={styles.content}>
+          <label className={styles.textLogin}>Data:</label>
+          <input
+            {...register("date")}
+            className={
+              errors.date?.type === "required" ? styles.inputError : styles.input
+            }
+            type="date"
+          />
+          <p className={styles.errors}>{errors.date?.message}</p>
+        </div>
+        <div className={styles.content}>
+          <label className={styles.textLogin}>Código do imóvel:</label>
+          <input
+            {...register("propertyCode")}
+            className={
+              errors.propertyCode?.type === "required"
+                ? styles.inputError
+                : styles.input
+            }
+            type="number"
+            placeholder="Digite o código do imóvel"
+          />
+          <p className={styles.errors}>{errors.propertyCode?.message}</p>
+        </div>
+        <div className={styles.content}>
+          <label className={styles.textLogin}>Tipo de imóvel:</label>
+          <select
+            {...register("typeProperty")}
+            className={
+              errors.typeProperty?.type === "required"
+                ? styles.inputError
+                : styles.input
+            }
+          >
+            <option value="">Selecione</option>
+            <option value="1">Casa</option>
+            <option value="2">Apartamento</option>
+          </select>
+
+          <p className={styles.errors}>{errors.typeProperty?.message}</p>
+        </div>
+        <div className={styles.content}>
+          <label className={styles.textLogin}>Tipo de contrato:</label>
+          <select
+            {...register("typeAgreemnet")}
+            className={
+              errors.typeAgreemnet?.type === "required"
+                ? styles.inputError
+                : styles.input
+            }
+          >
+            <option value="">Selecione</option>
+            <option value="1">Venda</option>
+            <option value="2">Aluguel</option>
+          </select>
+          <p className={styles.errors}>{errors.typeAgreemnet?.message}</p>
+        </div>
+      <div className={styles.buttonContainer}>
+        <Button className={styles.button} loading={loading} type="submit">
+          CADASTRAR
+        </Button>
       </div>
-      <div>
-        <label className={styles.textLogin}>Tipo de contrato:</label>
-        <select
-          {...register("typeAgreemnet")}
-          className={
-            errors.typeAgreemnet?.type === "required"
-              ? styles.inputError
-              : styles.input
-          }
-        >
-          <option value="">Selecione</option>
-          <option value="1">Venda</option>
-          <option value="2">Aluguel</option>
-        </select>
-        <p className={styles.errors}>{errors.typeAgreemnet?.message}</p>
-      </div>
-      <Button className={styles.button} loading={loading} type="submit">
-        CADASTRAR
-      </Button>
-    </form>
+      </form>
+    </div>
   );
 }

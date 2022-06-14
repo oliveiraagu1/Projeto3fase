@@ -28,10 +28,7 @@ export default function Contract() {
       </div>
 
       <main className={styles.main}>
-        <div className={styles.title}>
-          <h1>Registe um contrato</h1>
-        </div>
-
+        
         <div className={styles.grid}>
           <FormContract />
         </div>
