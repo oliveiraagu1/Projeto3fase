@@ -7,10 +7,9 @@ export const AuthContext = createContext({});
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState({
-    id: "",
+    id: "2",
     name: "",
     email: "",
-    password: "",
     register: "",
   });
 

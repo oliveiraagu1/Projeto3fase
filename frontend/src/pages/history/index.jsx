@@ -4,10 +4,12 @@ import styles from "./styles.module.scss";
 import HistoryItem from "../../components/ui/HisotryItem";
 import SlideBar from "../../components/ui/SlideBar";
 import { LogoMenor } from "../../components/Logo";
+import { AuthContext } from '../../contexts/AuthContext';
 
 import { api } from '../../services/api';
 
 export default function History() {
+  const { user } = useContext(AuthContext);
   const [visible, setVisible] = useState(false);
   const [contract, setContract] = useState([]);
 
@@ -15,7 +17,7 @@ export default function History() {
   useLayoutEffect( () => {
 
    async function teste(){
-      const response = await api.get(`/contract/list/1`)
+      const response = await api.get(`/contract/list/${user.id}`)
 
       setContract(response.data)
 
@@ -53,6 +55,13 @@ export default function History() {
           </React.Fragment>
         ))}
       </div>
+
+        {contract.length === 0 && (
+          <div className={styles.empty}>
+            <span>Você não possui nenhum cadastro no sistema.... 🙁</span>
+          </div>
+        ) }
+
     </div>
   );
 }

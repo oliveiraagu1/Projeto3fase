@@ -1,8 +1,6 @@
 package br.com.api.grow.model.contract.entity;
 
-import br.com.api.grow.model.role.entity.RoleModel;
 import br.com.api.grow.model.user.entity.UserModel;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

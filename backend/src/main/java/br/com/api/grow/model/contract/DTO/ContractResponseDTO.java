@@ -1,9 +1,6 @@
 package br.com.api.grow.model.contract.DTO;
 
 import br.com.api.grow.model.contract.entity.ContractModel;
-import br.com.api.grow.model.user.DTO.UserResponseDTO;
-import br.com.api.grow.model.user.entity.UserModel;
-import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

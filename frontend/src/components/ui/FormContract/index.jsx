@@ -14,7 +14,7 @@ const schema = yup
       .min(3, "A matrícula precisa ter no mínimo 3 caracteres")
       .required("Campo obrigatório!"),
     date: yup
-      .string()
+      .date()
       .required("Campo obrigátorio!")
       .default(() => new Date()),
     propertyCode: yup.string().required("Campo obrigátorio!"),
@@ -87,6 +87,8 @@ export function FormContract() {
             : styles.input
         }
         type="number"
+        placeholder="Digite o código do imóvel"
+
       />
       <p className={styles.errors}>{errors.propertyCode?.message}</p>
 
