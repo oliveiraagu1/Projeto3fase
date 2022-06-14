@@ -4,8 +4,10 @@ import styles from "./styles.module.scss";
 import SlideBar from "../../components/ui/SlideBar";
 import { FormContract } from "../../components/ui/FormContract";
 import { LogoMenor } from "../../components/Logo";
+import { AuthContext } from '../../contexts/AuthContext';
 
 export default function Contract() {
+  const { user } = useContext(AuthContext);
   const [visible, setVisible] = useState(false);
 
   return (
@@ -36,7 +38,7 @@ export default function Contract() {
       </main>
 
       <footer className={styles.footer}>
-        <p>Testando</p>
+        <p>{user.name}</p>
       </footer>
     </div>
   );

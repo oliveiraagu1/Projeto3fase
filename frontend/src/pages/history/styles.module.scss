@@ -48,3 +48,13 @@
     font-size: 64px;
   }
 }
+.empty{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    font-size: 30px;
+    color: var(--white);
+  }
+}

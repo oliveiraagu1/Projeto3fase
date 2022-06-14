@@ -3,13 +3,10 @@ package br.com.api.grow.model.contract.service;
 import br.com.api.grow.model.contract.DTO.ContractResponseDTO;
 import br.com.api.grow.model.contract.entity.ContractModel;
 import br.com.api.grow.model.contract.repository.ContractRepository;
-import net.bytebuddy.agent.builder.AgentBuilder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 import static br.com.api.grow.model.contract.DTO.ContractResponseDTO.transformEmDTO;
 
@@ -23,11 +20,11 @@ public class ContractService {
     }
 
 
-    public List<ContractResponseDTO> listContract(Long userId){
+    public List<ContractResponseDTO> listContractUserId(Long userId){
 
         List<ContractResponseDTO> listContract = new ArrayList<>();
 
-        for(ContractModel cm : contractRepository.findAll()){
+        for(ContractModel cm : contractRepository.findAllByUser_IdEquals(userId)){
 
             listContract.add(transformEmDTO(cm));
         }
