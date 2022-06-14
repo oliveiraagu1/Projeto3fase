@@ -1,10 +1,10 @@
 package br.com.api.grow.model.user.DTO;
+
 import br.com.api.grow.model.user.entity.UserModel;
-import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 @Getter
 public class UserResponseDTO {
 

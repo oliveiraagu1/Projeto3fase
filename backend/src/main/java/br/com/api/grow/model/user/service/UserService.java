@@ -1,7 +1,5 @@
 package br.com.api.grow.model.user.service;
 
-import br.com.api.grow.model.user.DTO.JwtRequest;
-import br.com.api.grow.model.user.DTO.JwtResponse;
 import br.com.api.grow.model.user.entity.UserModel;
 import br.com.api.grow.model.user.repository.UserRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -24,18 +22,16 @@ public class UserService {
 
     public UserModel create(UserModel userModel){
 
-       String encodedPassword =  passwordEncoder.encode(userModel.getPassword());
-       userModel.setPassword(encodedPassword);
+        String encodedPassword =  passwordEncoder.encode(userModel.getPassword());
+         userModel.setPassword(encodedPassword);
         return userRepository.save(userModel);
     }
 
-    public JwtResponse authenticate(JwtRequest user){
-
-        UserModel userExits = userRepository.findByEmail(user.getEmail());
-        return new JwtResponse(userExits.getEmail(), userExits.getName(), userExits.getRoles().getId());
-    }
-
-
+//    public JwtResponse authenticate(JwtRequest user){
+//
+//        UserModel userExits = userRepository.findByEmail(user.getEmail());
+//        return new JwtResponse(userExits.getEmail(), userExits.getName(), userExits.getRoles().getId());
+//    }
 
    public List<UserModel> listUser(){
        return userRepository.findAll();
