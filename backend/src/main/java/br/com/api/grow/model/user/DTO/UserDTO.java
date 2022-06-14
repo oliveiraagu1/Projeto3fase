@@ -1,6 +1,5 @@
 package br.com.api.grow.model.user.DTO;
 
-import br.com.api.grow.model.role.entity.RoleModel;
 import br.com.api.grow.model.user.entity.UserModel;
 import lombok.*;
 
