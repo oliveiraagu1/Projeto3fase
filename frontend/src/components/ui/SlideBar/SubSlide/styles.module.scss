@@ -4,11 +4,14 @@
     height: 100vh;
     background-color: #FFDDD2;
     justify-content: center;
+    margin-left: -230px;
+
 }
 
 .burguerSlider{
     display: flex;
     justify-content: flex-end;
+    
 }
 .buttonsContainer {
     height: 340px;
