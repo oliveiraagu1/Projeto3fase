@@ -12,7 +12,7 @@ public class ContractResponseDTO {
 
     private Long Id;
 
-    private String nameClient;
+    private String name;
 
 
     private Date date;
@@ -27,14 +27,14 @@ public class ContractResponseDTO {
     private Integer propertyCode;
 
 
-    private String typeAgreement;
+    private Integer typeAgreement;
 
     private Long userId;
 
     public static ContractResponseDTO transformEmDTO(ContractModel contractModel) {
         return new ContractResponseDTO(
                 contractModel.getId(),
-                contractModel.getNameClient(),
+                contractModel.getName(),
                 contractModel.getDate(),
                 contractModel.getTypeProperty(),
                 contractModel.getRegistration(),
