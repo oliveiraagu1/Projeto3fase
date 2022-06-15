@@ -16,10 +16,12 @@ public class UserDTO {
 
     private String password;
 
+    private Integer registration;
+
     private Long idRole;
 
     public UserModel transformaParaObjeto(){
-        return new UserModel(email, name, password, idRole);
+        return new UserModel(email, name, password, registration, idRole);
     }
 
 }

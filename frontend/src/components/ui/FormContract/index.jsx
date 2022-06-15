@@ -16,7 +16,7 @@ const schema = yup
     date: yup.string().required("Campo obrigátorio!"),
     propertyCode: yup.string().required("Campo obrigátorio!"),
     typeProperty: yup.string().required("Campo obrigátorio!"),
-    typeAgreemnet: yup.string().required("Campo obrigátorio!"),
+    typeAgreement: yup.string().required("Campo obrigátorio!"),
   })
   .required();
 
@@ -29,15 +29,15 @@ export function FormContract() {
     resolver: yupResolver(schema),
   });
 
-  const { signIn } = useContext(AuthContext);
+  const { createContract } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
 
   console.log(errors);
 
-  async function handleLogin(data) {
-    // setLoading(true);
-    // await signIn(data);
-    // setLoading(false);
+  async function handleContract(data) {
+    setLoading(true);
+    await createContract(data);
+    setLoading(false);
   }
   return (
     <div className={styles.mainContainer}>
@@ -45,7 +45,7 @@ export function FormContract() {
         <h1>Registe um contrato</h1>
       </div>
 
-      <form onSubmit={handleSubmit(handleLogin)} className={styles.form}>
+      <form onSubmit={handleSubmit(handleContract)} className={styles.form}>
         <div className={styles.content}>
           <label className={styles.textLogin}>Nome:</label>
           <input
@@ -81,7 +81,9 @@ export function FormContract() {
           <input
             {...register("date")}
             className={
-              errors.date?.type === "required" ? styles.inputError : styles.input
+              errors.date?.type === "required"
+                ? styles.inputError
+                : styles.input
             }
             type="date"
           />
@@ -121,9 +123,9 @@ export function FormContract() {
         <div className={styles.content}>
           <label className={styles.textLogin}>Tipo de contrato:</label>
           <select
-            {...register("typeAgreemnet")}
+            {...register("typeAgreement")}
             className={
-              errors.typeAgreemnet?.type === "required"
+              errors.typeAgreement?.type === "required"
                 ? styles.inputError
                 : styles.input
             }
@@ -132,13 +134,13 @@ export function FormContract() {
             <option value="1">Venda</option>
             <option value="2">Aluguel</option>
           </select>
-          <p className={styles.errors}>{errors.typeAgreemnet?.message}</p>
+          <p className={styles.errors}>{errors.typeAgreement?.message}</p>
         </div>
-      <div className={styles.buttonContainer}>
-        <Button className={styles.button} loading={loading} type="submit">
-          CADASTRAR
-        </Button>
-      </div>
+        <div className={styles.buttonContainer}>
+          <Button className={styles.button} loading={loading} type="submit">
+            CADASTRAR
+          </Button>
+        </div>
       </form>
     </div>
   );

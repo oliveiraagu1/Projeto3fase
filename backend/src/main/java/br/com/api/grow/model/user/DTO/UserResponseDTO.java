@@ -11,6 +11,7 @@ public class UserResponseDTO {
     private Long id;
     private String name;
     private String email;
+    private Integer registration;
     private Long idRole;
 
 
@@ -19,6 +20,7 @@ public class UserResponseDTO {
                 userModel.getId(),
                 userModel.getName(),
                 userModel.getEmail(),
+                userModel.getRegistration(),
                 userModel.getRoles().getId());
     }
 }
