@@ -22,7 +22,7 @@ public class ContractModel {
     private Long id;
 
     @Column(length = 150, nullable = false)
-    private String nameClient;
+    private String name;
 
     @Column(nullable = false)
     private Date date;
@@ -37,21 +37,21 @@ public class ContractModel {
     private Integer propertyCode;
 
     @Column(length = 100,nullable = false)
-    private String typeAgreement;
+    private Integer typeAgreement;
 
     @ManyToOne(cascade = CascadeType.MERGE)
     private UserModel user;
 
     public ContractModel(
-            String nameClient,
+            String name,
             Date date,
             Integer typeProperty,
             Integer registration,
             Integer propertyCode,
-            String typeAgreement,
+            Integer typeAgreement,
             Long userId
             ) {
-        this.nameClient = nameClient;
+        this.name = name;
         this.date = date;
         this.typeProperty = typeProperty;
         this.registration = registration;
