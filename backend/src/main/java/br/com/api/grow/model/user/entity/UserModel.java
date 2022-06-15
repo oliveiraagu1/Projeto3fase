@@ -31,6 +31,9 @@ public class UserModel {
     @Column(nullable = false)
     private String password;
 
+    @Column(nullable = false)
+    private Integer registration;
+
     @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "roleId", referencedColumnName = "id")
    private RoleModel roles;
@@ -39,10 +42,11 @@ public class UserModel {
     private List<ContractModel> contracts;
 
 
-    public UserModel(String email, String name, String password, Long idRole) {
+    public UserModel(String email, String name, String password, Integer registration, Long idRole) {
         this.name = name;
         this.email = email;
         this.password = password;
+        this.registration = registration;
         this.roles = new RoleModel(idRole);
     }
 
