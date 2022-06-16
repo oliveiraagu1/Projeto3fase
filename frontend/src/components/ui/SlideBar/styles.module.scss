@@ -1,10 +1,4 @@
-.burguerContainer {
-    background: linear-gradient(
-      135deg,
-      rgba(0, 109, 119, 1) 0%,
-      rgba(131, 197, 190, 1) 100%
-    );
-    height: 50px;
-    width: 50px;
-    border: none;
-  }
+.container {
+  transition: 0.5s;
+  transform: translateX(230px);
+}
