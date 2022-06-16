@@ -36,7 +36,10 @@ public class AuthenticatedFilterJWT extends OncePerRequestFilter {
 
         token = token.substring(7);
 
-        if(jwtHelper.tokenValid(token)){
+        System.out.println("O token é: " + token);
+
+        if(!jwtHelper.tokenValid(token)){
+
             throw  new ServletException("Token expired or invalid!");
         }
 
