@@ -21,7 +21,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   margin: 0 auto;
   max-width: 1250px;
@@ -57,4 +57,34 @@
     font-size: 30px;
     color: var(--white);
   }
+}
+
+
+///////////////////////////////
+
+.main {
+  background: rgba(255, 255, 255, 0.3019607843);
+  border-radius: 25px;
+  width: 700px;
+  margin: 0 auto;
+  height: fit-content;
+  padding: 20px;
+}
+
+.titleMain {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+
+  p {
+    font-size: 25px;
+    font-weight: bold;
+  }
+}
+.content{
+  display: flex;
+  flex-direction: column;
+
 }
