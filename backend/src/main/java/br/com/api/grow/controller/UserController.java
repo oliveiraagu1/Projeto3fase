@@ -1,15 +1,17 @@
 package br.com.api.grow.controller;
 
 import br.com.api.grow.model.user.DTO.SessionDTO;
+import br.com.api.grow.model.user.DTO.SessionResponseDTO;
 import br.com.api.grow.model.user.DTO.UserDTO;
 import br.com.api.grow.model.user.DTO.UserResponseDTO;
 import br.com.api.grow.model.user.entity.UserModel;
 import br.com.api.grow.model.user.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/user")
@@ -30,16 +32,12 @@ public class UserController {
     }
 
     @PostMapping("/session")
-    public ResponseEntity<String> session(@RequestBody SessionDTO user){
+    public ResponseEntity<SessionResponseDTO> session(@RequestBody SessionDTO user){
 
-        return new ResponseEntity<String>(userService.session(user), HttpStatus.OK);
 
+        return new ResponseEntity<SessionResponseDTO>(userService.session(user), HttpStatus.OK);
     }
 
 
-    @GetMapping("/list")
-    public ResponseEntity<List<UserModel>> listUser() {
-        return new ResponseEntity<>(userService.listUser(), HttpStatus.OK);
-    }
 
 }
