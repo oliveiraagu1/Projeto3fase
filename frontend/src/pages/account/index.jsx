@@ -6,6 +6,7 @@ import foto from "../account/foto-teste.png";
 import SlideBar from "../../components/ui/SlideBar"
 import { AuthContext } from "../../contexts/AuthContext";
 import { useContext } from "react";
+import { FaEraser } from "react-icons/fa";
 
 export default function myAccount() {
     const { user } = useContext(AuthContext);
@@ -23,8 +24,8 @@ export default function myAccount() {
                 <div className={styles.dados}>
                 <p>Nome:</p><p>{user.nome}</p>
                 <p>E-mail:</p>
-                <p>Senha: **********</p>
-                <p>Minha matricula:</p>
+                <p>Senha: **********</p><FaEraser width={20}/>
+                <p>Minha matricula:</p><p>{user.registration}</p>
                 </div>
                 <div className={styles.containerButton}>
                     <Link href={"/contract"} >
