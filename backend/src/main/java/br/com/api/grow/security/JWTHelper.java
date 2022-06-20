@@ -45,7 +45,6 @@ public class JWTHelper {
 
         Map<String, Object> claims = new HashMap<>();
         claims.put("name", user.getName());
-        claims.put("email", user.getEmail());
 
         return Jwts.builder()
                 .setClaims(claims)

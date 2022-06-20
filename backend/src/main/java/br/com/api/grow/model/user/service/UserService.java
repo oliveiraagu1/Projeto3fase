@@ -1,14 +1,13 @@
 package br.com.api.grow.model.user.service;
 
 import br.com.api.grow.model.user.DTO.SessionDTO;
+import br.com.api.grow.model.user.DTO.SessionResponseDTO;
 import br.com.api.grow.model.user.entity.UserModel;
 import br.com.api.grow.model.user.repository.UserRepository;
 import br.com.api.grow.security.JWTHelper;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class UserService {
@@ -33,7 +32,7 @@ public class UserService {
         return userRepository.save(userModel);
     }
 
-    public String session(SessionDTO user){
+    public SessionResponseDTO session(SessionDTO user){
 
         UserModel userLogin = userRepository.findByEmail(user.getEmail());
 
@@ -41,15 +40,19 @@ public class UserService {
             throw new IllegalArgumentException("User or password incorrect");
         }
 
-        return jwtHelper.generationToken(userLogin);
+        String token = jwtHelper.generationToken(userLogin);
+
+        return new SessionResponseDTO(
+                userLogin.getId(),
+                userLogin.getEmail(),
+                userLogin.getName(),
+                userLogin.getRegistration(),
+                userLogin.getRoles().getId(),
+                token
+        );
     }
 
 
-
-   public List<UserModel> listUser(){
-       return userRepository.findAll();
-
-   }
 
 
 
