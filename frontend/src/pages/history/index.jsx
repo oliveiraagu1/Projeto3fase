@@ -18,8 +18,6 @@ export default function History() {
       const response = await api.get(`/contract/list/${user.id}`);
 
       setContract(response.data);
-
-      console.log(response.data);
     }
     teste();
   }, []);

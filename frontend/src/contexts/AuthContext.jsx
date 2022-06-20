@@ -36,7 +36,7 @@ export function AuthProvider({ children }) {
       api.defaults.headers['Authorization'] = `Bearer ${token}`;
       toast.success("Logado com sucesso!");
 
-      //Redirecionar para a página Home
+      // //Redirecionar para a página Home
       await Router.push("/home");
     } catch (err) {
       toast.error("Error ao acessar!");
