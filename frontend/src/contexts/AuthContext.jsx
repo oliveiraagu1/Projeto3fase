@@ -1,9 +1,19 @@
 import { createContext, useState } from "react";
-import { api } from "../services/api.js";
-import Router from "next/router";
+import { destroyCookie, setCookie } from "nookies";
+import { api } from "../services/apiClient";
 import { toast } from "react-toastify";
+import Router from "next/router";
 
 export const AuthContext = createContext({});
+
+export function signOut() {
+  try {
+    destroyCookie(undefined, "@nextauth.token");
+    Router.push("/");
+  } catch {
+    toast.error("Error ao deslogar!");
+  }
+}
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState({
@@ -11,57 +21,70 @@ export function AuthProvider({ children }) {
     name: "",
     email: "",
     registration: "",
-    roleId: ""
+    roleId: "",
   });
 
   async function signIn({ email, password }) {
     try {
-
       const response = await api.post("user/session", {
         email,
-        password
+        password,
       });
 
-      const { id, name, registration, roleId, token} = response.data;
- 
+      const { id, name, registration, roleId, token } = response.data;
+
+      setCookie(undefined, "@nextauth.token", token, {
+        maxAge: 300, // Expirar em 5 minutos
+        path: "/", // Quais caminhos terão acesso ao cookie
+      });
+
       setUser({
         id,
         name,
         email: response.data.email,
         registration,
-        roleId
-      })
+        roleId,
+      });
 
-      // Verificar se vai ter token // Passar para próximas requisições o nosso token
-      api.defaults.headers['Authorization'] = `Bearer ${token}`;
+      //Passar para próximas requisições o nosso token
+      api.defaults.headers["Authorization"] = `Bearer ${token}`;
       toast.success("Logado com sucesso!");
 
-      // //Redirecionar para a página Home
+      //Redirecionar para a página Home
       await Router.push("/home");
     } catch (err) {
       toast.error("Error ao acessar!");
     }
   }
 
-  async function signUp({ email, name, password, registration }) {
+  async function signUp({ email, name, password, registration, idRole }) {
     try {
-      const response = await api.post("users/signup", {
-        email,
+      const response = await api.post("user/created", {
         name,
+        email,
         password,
         registration,
+        idRole
       });
+
+      console.log(response.data);
 
       toast.success("Conta criada com sucesso!");
       await Router.push("/");
     } catch (err) {
       toast.error("Erro ao cadastrar o usuário");
+      console.log(err);
     }
   }
 
-  async function createContract({ name, date, typeProperty, registration, propertyCode, typeAgreement
+  async function createContract({
+    name,
+    date,
+    typeProperty,
+    registration,
+    propertyCode,
+    typeAgreement,
   }) {
-  
     try {
       const response = await api.post("contract/created", {
         name,
@@ -85,6 +108,7 @@ export function AuthProvider({ children }) {
         signIn,
         signUp,
         createContract,
+        signOut,
       }}
     >
       {children}

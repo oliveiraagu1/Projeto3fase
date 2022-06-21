@@ -106,9 +106,9 @@ export function FormContract() {
         <div className={styles.content}>
           <label className={styles.textLogin}>Tipo de imóvel:</label>
           <select
-            {...register("typeProperty")}
+            {...register("role")}
             className={
-              errors.typeProperty?.type === "required"
+              errors.role?.type === "required"
                 ? styles.inputError
                 : styles.input
             }

@@ -5,22 +5,12 @@ import HistoryItem from "../../components/ui/HisotryItem";
 import SlideBar from "../../components/ui/SlideBar";
 import { LogoMenor } from "../../components/Logo";
 import { AuthContext } from "../../contexts/AuthContext";
+import { canSSRAuth } from "../../utils/canSSRAuth";
+import { setupAPIClient } from "../../services/api";
 
-import { api } from "../../services/api";
-
-export default function History() {
+export default function History({ contractList }) {
   const { user } = useContext(AuthContext);
   const [visible, setVisible] = useState(false);
-  const [contract, setContract] = useState([]);
-
-  useLayoutEffect(() => {
-    async function teste() {
-      const response = await api.get(`/contract/list/${user.id}`);
-
-      setContract(response.data);
-    }
-    teste();
-  }, []);
 
   return (
     <div className={visible ? styles.container : styles.containerClose}>
@@ -43,14 +33,14 @@ export default function History() {
       </div>
 
       <div className={styles.grid}>
-        {contract.map((item) => (
+        {contractList.map((item) => (
           <React.Fragment key={item.id}>
             <HistoryItem data={item} />
           </React.Fragment>
         ))}
       </div>
 
-      {contract.length === 0 && (
+      {contractList.length === 0 && (
         <div className={styles.empty}>
           <span>Você não possui nenhum cadastro no sistema.... 🙁</span>
         </div>
@@ -58,3 +48,17 @@ export default function History() {
     </div>
   );
 }
+
+export const getServerSideProps = canSSRAuth(async (context) => {
+
+  const apiClient = setupAPIClient(context);
+
+  const response = await apiClient.get(`contract/list/1`);
+
+  return{
+      props: {
+          contractList: response.data
+      }
+  }
+
+})
