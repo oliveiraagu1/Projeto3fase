@@ -1,6 +1,7 @@
 import styles from "./styles.module.scss";
 import Head from "next/head";
 import Link from "next/link";
+import { canSSRAuth } from '../../utils/canSSRAuth';
 import { LogoMenor } from "../../components/Logo"
 import { FormSignup } from "../../components/ui/FormSignup";
 
@@ -32,3 +33,12 @@ export default function SignUp() {
         </div>
     );
 }
+
+export const getServerSideProps = canSSRAuth(async (context) => {
+
+    return {
+        props: {
+            
+        }
+    }
+})

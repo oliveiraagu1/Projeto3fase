@@ -34,7 +34,6 @@ public class UserController {
     @PostMapping("/session")
     public ResponseEntity<SessionResponseDTO> session(@RequestBody SessionDTO user){
 
-
         return new ResponseEntity<SessionResponseDTO>(userService.session(user), HttpStatus.OK);
     }
 

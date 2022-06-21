@@ -31,6 +31,7 @@ public class AuthenticatedFilterJWT extends OncePerRequestFilter {
         }
 
         if(token == null || !token.startsWith("Bearer")){
+            System.out.println("quero ver o que tem no token " + token);
             throw new ServletException("Token is invalid!");
         }
 

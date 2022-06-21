@@ -8,6 +8,7 @@ import SlideBar from "../../components/ui/SlideBar";
 import { LogoHome } from "../../components/Logo";
 import PieChart from "./PieChart";
 import { UserData } from "./Data";
+import { canSSRAuth } from '../../utils/canSSRAuth'
 
 export default function Home() {
   const { user } = useContext(AuthContext);
@@ -15,6 +16,9 @@ export default function Home() {
 
   return (
     <section className={styles.fullContainer}>
+      <Head>
+        <title>Grow - Home</title>
+      </Head>
       <button
         className={styles.burguerContainer}
         onClick={() => setVisible(!visible)}
@@ -62,3 +66,9 @@ export default function Home() {
     </section>
   );
 }
+
+export const getServerSideProps = canSSRAuth(async (context) => {
+  return {
+    props: {},
+  };
+});
