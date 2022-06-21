@@ -22,6 +22,7 @@ export function AuthProvider({ children }) {
     email: "",
     registration: "",
     roleId: "",
+    token: ""
   });
 
   async function signIn({ email, password }) {
@@ -44,6 +45,7 @@ export function AuthProvider({ children }) {
         email: response.data.email,
         registration,
         roleId,
+        token
       });
 
       //Passar para próximas requisições o nosso token
@@ -59,6 +61,7 @@ export function AuthProvider({ children }) {
 
   async function signUp({ email, name, password, registration, idRole }) {
     try {
+
       const response = await api.post("user/created", {
         name,
         email,
