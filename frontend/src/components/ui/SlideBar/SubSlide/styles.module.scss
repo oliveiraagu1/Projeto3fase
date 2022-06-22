@@ -1,8 +1,10 @@
+@import '../../../../../styles/_vars.scss';
+
 .openedSlidebar {
     display: flex;
     width: 230px;
     height: 100vh;
-    background-color: #FFDDD2;
+    background-color: $pink;
     justify-content: center;
     margin-left: -230px;
 
@@ -46,7 +48,7 @@
 }
 
 .fullOpacity{
-    background: rgb(0, 109, 119);
+    background: $dark-green;
     padding: 15px;
     display: flex;
     justify-content: space-between;

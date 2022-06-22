@@ -1,14 +1,12 @@
+@import '../../../styles/_vars.scss';
+
 .container{
-    background: radial-gradient(#006D77, #83C5BE);
+    background: radial-gradient($dark-green, $green);
     max-width: 100vw;
     height: 100vw;
 }
-.modalAccount{
-    max-width: 500px;
-    height: 400px;
-    background: #ffffffe6;
-    border-radius: 90px;
-    margin: 0 auto;
+.Account{
+    @extend .modal;
 }
 //------------------foto
 .photo{
@@ -24,28 +22,28 @@
     margin: 0 auto;
 }
 .buttonMyAccount{
-    background: #fff;
+    background: $white-pure;
     border: none;
     height: 40px;
     border-radius: 20px;
-    color: #000;
+    color: $black;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: $fontMedium;
     padding: 0 20px;
 }
 .buttonLogout{
-    background: #fff;
+    background: $white-pure;
     border: none;
     height: 40px;
     border-radius: 20px;
-    color: #000;
+    color: $black;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: $fontMedium;
     padding: 0 20px;
 }
 .buttonLogout:hover{
-    background-color: #e5383b;
-    color: #fff;
+    background-color: $error;
+    color: $white-pure;
 }
 //-------------container de dados
 
@@ -55,9 +53,9 @@
 }
 .dados p{
     font-size: 14px;
-    font-family: 'Inter';
-    font-weight: 400;
-    color: #000;
+    font-family: $primaryFont;
+    font-weight: $fontMedium;
+    color: $black;
     padding: 5px 0;
 }
 //----------logo
@@ -69,7 +67,15 @@
     justify-content: space-between;
     max-width: 200px;
 }
-
+.containerElementos{
+    display: flex;
+    justify-content: space-between;
+    max-width: 150px;
+}
+.buttonSenha{
+    border: none;
+    background: none;
+}
 @media(max-width: 768px){
     .modalAccount{
         margin: 0 20px;

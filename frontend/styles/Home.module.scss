@@ -1,5 +1,7 @@
+@import '../../../styles/_vars.scss';
+
 .container {
-  background-image: linear-gradient(to right, #006D77, #FFDDD2);
+  background-image: linear-gradient(to right, $dark-green, $pink);
   width: 100%;
 }
 
@@ -7,12 +9,11 @@
   margin: 0 auto;
   display: flex;
   justify-content: center;
-
 }
 
 .main {
   border-radius: 40px;
-  background: rgba(255, 255, 255, 0.3);
+  background: #ffffff4d;
   height: 560px;
   width: 400px;
 
@@ -39,7 +40,7 @@
 }
 .containerPlaceholder {
   font-size: 14px;
-  font-weight: 400;
+  font-weight: $fontRegular;
   color: #C7D2D6;
   padding: 10px 20px;
 }
