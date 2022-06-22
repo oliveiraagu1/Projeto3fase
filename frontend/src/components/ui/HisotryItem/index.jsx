@@ -3,6 +3,10 @@ import styles from "./styles.module.scss";
 import { FiMoreVertical } from "react-icons/fi";
 
 export default function HistoryItem({ data }) {
+
+  console.log(data);
+
+
   return (
     <Link href={`/history/${data.id}`}>
       <a className={styles.container}>
@@ -11,7 +15,7 @@ export default function HistoryItem({ data }) {
             <img src='./assets/iconEdit.png'/>
           </div>
           <div className={styles.containerInfosContract}>
-            <p className={styles.name}>{data.nameClient}</p>
+            <p className={styles.name}>{data.name}</p>
             <p className={styles.register}>{data.propertyCode}</p>
           </div>
           <FiMoreVertical size={20} color='#545454' />

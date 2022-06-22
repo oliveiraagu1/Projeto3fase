@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { LogoMenor } from "../../components/Logo";
 import { FaArrowLeft } from "react-icons/fa";
+import { canSSRAuth } from "../../utils/canSSRAuth";
 import Link from "next/link";
 import Head from "next/head";
 import styles from "./styles.module.scss";
@@ -46,3 +47,12 @@ export default function HistoryItem() {
     </div>
   );
 }
+
+export const getServerSideProps = canSSRAuth(async (context) => {
+
+  return{
+    props: {}
+  }
+
+})
+

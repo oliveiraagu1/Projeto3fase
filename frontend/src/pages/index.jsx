@@ -3,6 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { Logo, LogoMenor } from "../components/Logo";
 import { FormLogin } from "../components/ui/FormLogin";
+import { canSSRGuest } from '../utils/canSSRGuest';
 
 export default function Login() {
 
@@ -26,3 +27,9 @@ export default function Login() {
     </div>
   );
 }
+
+export const getServerSideProps = canSSRGuest(async (context) => {
+  return {
+      props:{}
+  }
+})

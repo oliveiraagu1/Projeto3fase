@@ -8,10 +8,7 @@ import br.com.api.grow.model.user.entity.UserModel;
 import br.com.api.grow.model.user.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/user")
@@ -24,6 +21,7 @@ public class UserController {
     }
 
 
+
     @PostMapping("/created")
     public ResponseEntity<UserResponseDTO> created(@RequestBody UserDTO dto){
 
@@ -33,7 +31,6 @@ public class UserController {
 
     @PostMapping("/session")
     public ResponseEntity<SessionResponseDTO> session(@RequestBody SessionDTO user){
-
 
         return new ResponseEntity<SessionResponseDTO>(userService.session(user), HttpStatus.OK);
     }

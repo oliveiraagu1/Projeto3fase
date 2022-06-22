@@ -27,25 +27,12 @@ public class WebConfigSecurity extends WebSecurityConfigurerAdapter {
 
         http.csrf().disable()
                 .authorizeHttpRequests()
-                .antMatchers("/user/**").permitAll()
+                .antMatchers("/**").permitAll()
                 .and()
                 .httpBasic();
 
         http.addFilterBefore(authenticatedFilterJWT, UsernamePasswordAuthenticationFilter.class);
     }
-
-
-
-//        http.authorizeRequests()
-//                .antMatchers(HttpMethod.POST, "/user/**").permitAll()
-//                .anyRequest().authenticated()
-//                .and().csrf().disable()
-//                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-//                .and()
-//                .addFilterBefore(authenticatedFilterJWT, UsernamePasswordAuthenticationFilter.class);
-//
-//
-
 
 }
 

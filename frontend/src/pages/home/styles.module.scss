@@ -25,18 +25,19 @@
   display: flex;
   width: 250px;
   flex-direction: column;
-  border-left: 1px solid #505050;
+  border-left: 1px solid rgba(80, 80, 80, 0);
   padding: 20px;
-  margin: 20px 20px 20px 50px;
-  opacity: 0;
+  margin: 20px 20px 20px 0;
+  transition: 0.5s;
+  transform: translateX(230px);
 }
-.containerHistoricoClosed{
+.containerHistoricoClosed {
   display: flex;
   width: 250px;
   flex-direction: column;
   border-left: 1px solid #505050;
   padding: 20px;
-  margin: 20px 20px 20px 50px;
+  margin: 20px 20px 20px 0;
 }
 .historicoUm {
   background: linear-gradient(
@@ -52,10 +53,10 @@
   padding: 5px;
   border: none;
   text-align: left;
-}
-.historicoUm h2 {
-  margin-left: 5px;
-  font-size: 15px;
+  h2 {
+    margin-left: 5px;
+    font-size: 15px;
+  }
 }
 .historicoDois {
   opacity: 60%;
@@ -71,11 +72,17 @@
   padding: 5px;
   border: none;
   text-align: left;
+  h2 {
+    font-size: 15px;
+    margin-left: 5px;
+  }
 }
-.historicoDois h2{
-  font-size: 15px;
-  margin-left: 5px;
+.historicoDois:hover{
+  transition: 0.3s;
+  opacity: 100%;
+  cursor: pointer;
 }
+
 .filter {
   filter: invert(69%) sepia(33%) saturate(668%) hue-rotate(325deg) brightness(92%) contrast(92%);
 }
@@ -89,11 +96,11 @@
 .footer h1{
   color: $white-pure;
 }
-.containerGrafico{
+.containerGrafico {
   width: 400px;
   height: 100px;
 }
-.mainHome{
+.mainHome {
   display: flex;
   justify-content: space-between;
   max-width: 1250px;

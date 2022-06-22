@@ -5,6 +5,7 @@ import SlideBar from "../../components/ui/SlideBar";
 import { FormContract } from "../../components/ui/FormContract";
 import { LogoMenor } from "../../components/Logo";
 import { AuthContext } from '../../contexts/AuthContext';
+import { canSSRAuth } from "../../utils/canSSRAuth";
 
 export default function Contract() {
   const { user } = useContext(AuthContext);
@@ -23,11 +24,11 @@ export default function Contract() {
         <SlideBar visible={visible} />
       </button>
 
+      <main className={styles.main}>
       <div className={styles.image}>
         <LogoMenor />
       </div>
 
-      <main className={styles.main}>
         
         <div className={styles.grid}>
           <FormContract />
@@ -40,3 +41,14 @@ export default function Contract() {
     </div>
   );
 }
+
+
+export const getServerSideProps = canSSRAuth(async (context) => {
+
+  return{
+    props: {}
+  }
+
+})
+
+

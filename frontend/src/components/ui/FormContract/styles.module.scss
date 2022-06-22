@@ -1,8 +1,9 @@
 .form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  margin: 5px;
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
   max-width: 1250px;
 }
 
@@ -68,4 +69,5 @@
 .buttonContainer{
   display: flex;
   justify-content: center;
+  grid-area: 4 / 1 / 5 / 3;
 }
