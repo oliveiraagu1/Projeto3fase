@@ -1,17 +1,15 @@
+@import '../../../styles/_vars.scss';
+
 .container {
-  background-image: linear-gradient(to right, #FFDDD2, #006D77);
+  background-image: linear-gradient(to right, $pink, $dark-green);
   width: 100%;
-
 }
-
 .logo {
   margin-left: 18rem;
-
 }
-
 .main {
   border-radius: 40px;
-  background: rgba(255, 255, 255, 0.3);
+  background: $semi-transparent;
   height: 800px;
   width: 440px;
   margin: 20px auto;
@@ -22,14 +20,12 @@
     margin-left: 40px;
   }
 }
-
 .modalContainerMain {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .link {
   margin: 0 auto;
   display: flex;

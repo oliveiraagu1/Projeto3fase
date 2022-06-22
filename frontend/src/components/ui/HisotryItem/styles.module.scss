@@ -14,14 +14,14 @@
 }
 
 .name {
-    font-weight: bold;
+    font-weight: $fontBold;
     font-size: 15px;
     line-height: 20px;
 
 }
 
 .register {
-    color: #FFF;
+    color: $white-pure;
     font-size: 14px;
     line-height: 20px;
 }
