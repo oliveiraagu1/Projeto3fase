@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import Link from "next/link";
 import styles from "./styles.module.scss";
 import Image from "next/image";
@@ -11,7 +12,12 @@ import {
   FaWpforms,
 } from "react-icons/fa";
 
+import { AuthContext } from '../../../../contexts/AuthContext';
+
 export default function SubSlide() {
+
+  const { user } = useContext(AuthContext);
+
   return (
     <section className={styles.openedSlidebar}>
       <div className={styles.sliderConatainer}>
@@ -53,8 +59,20 @@ export default function SubSlide() {
               <a className={styles.button}>Adicionar Contrato</a>
               <FaChevronRight size={15} />
             </div>
-          
           </Link>
+
+          {user.id === 1 && (
+            <Link href={"/signup"}>
+            <div className={styles.lowOpacity}>
+              <FaWpforms size={20} color={"white"}  className={styles.icon} />
+              <a className={styles.button}>Cadastrar usuário</a>
+              <FaChevronRight size={15} />
+            </div>
+          </Link>
+          )}
+
+
+
         </div>
       </div>
     </section>

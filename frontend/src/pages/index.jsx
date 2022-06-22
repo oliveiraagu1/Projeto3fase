@@ -19,9 +19,6 @@ export default function Login() {
           <LogoMenor />
           <h1>Login</h1>
           <FormLogin />
-          <Link href={"/signup"}>
-            <a className={styles.link}>Não tem cadastro? Cadastre-se!</a>
-          </Link>
         </main>
       </div>
     </div>
