@@ -8,7 +8,7 @@ export default function SlideBar({ visible }){
     return(
        <div>
            {visible ? (
-               <div className={styles.container} >
+               <div className={visible ? styles.container : styles.closeContainer} >
                <SubSlide/>
                </div>
            ) : (
