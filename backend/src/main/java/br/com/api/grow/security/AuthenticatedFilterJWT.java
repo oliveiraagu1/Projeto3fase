@@ -12,30 +12,21 @@ import java.io.IOException;
 @Component
 public class AuthenticatedFilterJWT extends OncePerRequestFilter {
 
-
     private final JWTHelper jwtHelper;
 
     public AuthenticatedFilterJWT(JWTHelper jwtHelper) {
         this.jwtHelper = jwtHelper;
     }
 
-
-
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
-
-        System.out.println("Sei la o que " + request.getQueryString());
-
         String token = request.getHeader("Authorization");
-
-        System.out.println("quero ver o que tem no token comeco " + token);
 
         if(request.getRequestURI().contains("/user/session") || request.getMethod().equals("OPTIONS")){
            filterChain.doFilter(request, response);
            return;
         }
-
 
         if(token == null || !token.startsWith("Bearer")){
             throw new ServletException("Token is invalid!");
@@ -43,17 +34,13 @@ public class AuthenticatedFilterJWT extends OncePerRequestFilter {
 
         token = token.substring(7);
 
-        System.out.println("O token é: " + token);
 
         if(!jwtHelper.tokenValid(token)){
 
             throw  new ServletException("Token expired or invalid!");
         }
 
-
-
         filterChain.doFilter(request, response);
-
 
     }
 

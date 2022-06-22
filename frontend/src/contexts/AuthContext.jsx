@@ -22,7 +22,7 @@ export function AuthProvider({ children }) {
     email: "",
     registration: "",
     roleId: "",
-    token: ""
+    token: "",
   });
 
   async function signIn({ email, password }) {
@@ -32,20 +32,20 @@ export function AuthProvider({ children }) {
         password,
       });
 
-      const { id, name, registration, roleId, token } = response.data;
-
-      setCookie(undefined, "@nextauth.token", token, {
-        maxAge: 300, // Expirar em 5 minutos
-        path: "/", // Quais caminhos terão acesso ao cookie
-      });
+      const { userId, name, registration, roleId, token } = response.data;
 
       setUser({
-        id,
+        id: userId,
         name,
         email: response.data.email,
         registration,
         roleId,
-        token
+        token,
+      });
+
+      setCookie(undefined, "@nextauth.token", token, {
+        maxAge: 300, // Expirar em 5 minutos
+        path: "/", // Quais caminhos terão acesso ao cookie
       });
 
       //Passar para próximas requisições o nosso token
@@ -61,16 +61,13 @@ export function AuthProvider({ children }) {
 
   async function signUp({ email, name, password, registration, idRole }) {
     try {
-
-      const response = await api.post("user/created", {
+      await api.post("user/created", {
         name,
         email,
         password,
         registration,
-        idRole
+        idRole,
       });
-
-      console.log(response.data);
 
       toast.success("Conta criada com sucesso!");
       await Router.push("/");
@@ -88,6 +85,8 @@ export function AuthProvider({ children }) {
     propertyCode,
     typeAgreement,
   }) {
+    console.log("userid ", user.id);
+
     try {
       const response = await api.post("contract/created", {
         name,
@@ -99,6 +98,7 @@ export function AuthProvider({ children }) {
         userId: user.id,
       });
     } catch (err) {
+      console.log(err)
       toast.error("Error ao cadastrar o contrato!");
     }
   }

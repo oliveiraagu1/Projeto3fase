@@ -4,9 +4,6 @@ import { FiMoreVertical } from "react-icons/fi";
 
 export default function HistoryItem({ data }) {
 
-  console.log(data);
-
-
   return (
     <Link href={`/history/${data.id}`}>
       <a className={styles.container}>
