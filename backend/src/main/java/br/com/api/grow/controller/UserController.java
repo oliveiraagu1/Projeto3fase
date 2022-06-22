@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -21,6 +23,12 @@ public class UserController {
     }
 
 
+
+    @GetMapping("/list")
+    public List<UserModel> listAll(){
+
+        return userService.listAll();
+    }
 
     @PostMapping("/created")
     public ResponseEntity<UserResponseDTO> created(@RequestBody UserDTO dto){

@@ -19,7 +19,7 @@ export function setupAPIClient(ctx = undefined) {
       return response;
     },
     (error) => {
-      if (error.response.status === 400) {
+      if (error.response.status === 401) {
         // Qualquer erro 401 (não autorizado) deslogar o usuário
         if (typeof window !== undefined) {
           // Chamar a função para deslogar o usuário
