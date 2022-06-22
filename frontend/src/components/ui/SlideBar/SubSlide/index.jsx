@@ -25,7 +25,7 @@ export default function SubSlide() {
         <div className={styles.buttonsContainer}>
           <Link href={"/home"}>
             <div className={styles.lowOpacity}>
-              <FaHome size={20} />
+              <FaHome size={20} className={styles.iconLow}/>
               <a className={styles.button}>Home</a>
               <FaChevronRight size={15} />
             </div>
@@ -33,7 +33,7 @@ export default function SubSlide() {
 
           <Link href={"/account"}>
             <div className={styles.fullOpacity}>
-              <FaUserAlt size={20} color={"white"} />
+              <FaUserAlt size={20} color={"white"} className={styles.icon} />
               <a className={styles.button}>Meu Perfil</a>
               <FaChevronRight size={15} />
             </div>
@@ -41,7 +41,7 @@ export default function SubSlide() {
 
           <Link href={"/history"}>
             <div className={styles.lowOpacity}>
-              <FaBookmark size={20} />
+              <FaBookmark size={20} className={styles.iconLow}/>
               <a className={styles.button}>Meu Histórico</a>
               <FaChevronRight size={15} />
             </div>
@@ -49,7 +49,7 @@ export default function SubSlide() {
 
           <Link href={"/contract"}>
             <div className={styles.fullOpacity}>
-              <FaWpforms size={20} color={"white"} />
+              <FaWpforms size={20} color={"white"}  className={styles.icon} />
               <a className={styles.button}>Adicionar Contrato</a>
               <FaChevronRight size={15} />
             </div>

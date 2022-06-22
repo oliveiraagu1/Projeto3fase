@@ -24,11 +24,11 @@ export default function Contract() {
         <SlideBar visible={visible} />
       </button>
 
+      <main className={styles.main}>
       <div className={styles.image}>
         <LogoMenor />
       </div>
 
-      <main className={styles.main}>
         
         <div className={styles.grid}>
           <FormContract />
