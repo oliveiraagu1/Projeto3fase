@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -23,8 +24,8 @@ public class RoleModel {
 
     private String name;
 
-    @OneToOne(mappedBy = "roles")
-    private UserModel userModel;
+    @OneToMany(mappedBy = "roles")
+    private List<UserModel> userModel;
 
 
     public RoleModel(Long id){
