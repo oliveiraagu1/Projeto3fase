@@ -50,15 +50,13 @@ export default function History({ contractList }) {
 }
 
 export const getServerSideProps = canSSRAuth(async (context) => {
-
   const apiClient = setupAPIClient(context);
 
-  const response = await apiClient.get(`contract/list/1`);
+  const response = await apiClient.get(`contract/list/${user.id}`);
 
-  return{
-      props: {
-          contractList: response.data
-      }
-  }
-
-})
+  return {
+    props: {
+      contractList: response.data,
+    },
+  };
+});

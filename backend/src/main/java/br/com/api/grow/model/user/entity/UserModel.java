@@ -34,7 +34,7 @@ public class UserModel {
     @Column(nullable = false)
     private Integer registration;
 
-    @OneToOne(cascade = CascadeType.MERGE)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "roleId", referencedColumnName = "id")
    private RoleModel roles;
 

@@ -61,7 +61,7 @@ export default function SubSlide() {
             </div>
           </Link>
 
-          {user.id === 1 && (
+          {user.roleId === 1 && (
             <Link href={"/signup"}>
             <div className={styles.lowOpacity}>
               <FaWpforms size={20} color={"white"}  className={styles.icon} />

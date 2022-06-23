@@ -85,7 +85,6 @@ export function AuthProvider({ children }) {
     propertyCode,
     typeAgreement,
   }) {
-    console.log("userid ", user.id);
 
     try {
       const response = await api.post("contract/created", {
@@ -97,8 +96,10 @@ export function AuthProvider({ children }) {
         typeAgreement,
         userId: user.id,
       });
+      toast.success("Contrato criado com sucesso!");
+      await Router.push("/home");
+
     } catch (err) {
-      console.log(err)
       toast.error("Error ao cadastrar o contrato!");
     }
   }
