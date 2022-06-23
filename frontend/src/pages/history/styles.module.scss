@@ -1,5 +1,6 @@
 @import '../../../styles/vars';
 
+
 .container {
   background: linear-gradient(
     145deg,
@@ -8,6 +9,7 @@
   );
   width: 100vw;
   height: 100vh;
+  margin: 0 auto;
 }
 
 .containerClose {
@@ -44,10 +46,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 150px;
 
   h1 {
     font-size: 64px;
+    margin: 0 auto;
   }
 }
 .empty{
@@ -84,9 +86,51 @@
     font-size: 25px;
     font-weight: $fontBold;
   }
+  .titleText{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
+.formContainer{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+  max-width: 1250px;
+  justify-items: center;
+  margin-right: 15px;
+}
+
+.contractContent{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
 }
 .content{
   display: flex;
   flex-direction: column;
+  margin-left: 15px;
 
+}
+.input{
+  height: 35px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: none;
+  background-color: white;
+  outline: 0;
+  border-radius: 5px;
+}
+.inputContainer{
+  display: flex;
+  background: white;
+  align-items: center;
+  border-radius: 5px;
+  .editIcon{
+    position: relative;
+    right: 10px;
+  }
 }
