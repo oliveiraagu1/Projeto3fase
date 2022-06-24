@@ -6,6 +6,7 @@ import Link from "next/link";
 import Head from "next/head";
 import styles from "./styles.module.scss";
 import SlideBar from "../../components/ui/SlideBar";
+import {AiOutlineEdit} from "react-icons/ai"
 
 export default function HistoryItem() {
   const [visible, setVisible] = useState(false);
@@ -36,23 +37,75 @@ export default function HistoryItem() {
 
       <main className={styles.main}>
         <div className={styles.titleMain}>
+        <div className={styles.arrowLeft}>
           <Link href={"/history"}>
             <a>
               <FaArrowLeft size={24} color="#000" />
             </a>
           </Link>
+        </div>
+        <div className={styles.titleText} >
           <p>Registro do contrato</p>
         </div>
+        </div>
+        <form className={styles.formContainer}>
+            <div className={styles.contractContent}>
+              <label>Nome:</label>
+              <div className={styles.inputContainer} >
+              <input className={styles.input} placeholder="Casa Vargem Grande" />
+              <AiOutlineEdit size={15} className={styles.editIcon} />
+              </div>
+            </div>
+
+            <div className={styles.contractContent}>
+              <label>Matricula Funcionário:</label>
+              <div className={styles.input}>
+              <label>241232</label>
+              </div>
+            </div>
+
+            <div className={styles.contractContent}>
+              <label>Data:</label>
+              <div className={styles.inputContainer} >
+              <input className={styles.input} placeholder="24/04/2021" />
+              <AiOutlineEdit size={15} className={styles.editIcon} />
+              </div>
+            </div>
+            <div className={styles.contractContent}>
+              <label>Código do Imóvel:</label>
+              <div className={styles.input}>
+              <label>1231232</label>
+              </div>
+            </div>
+
+            <div className={styles.contractContent}>
+              <label>Tipo de Imóvel:</label>
+              <div className={styles.inputContainer} >
+              <input className={styles.input} placeholder="Casa" />
+              <AiOutlineEdit size={15} className={styles.editIcon} />
+              </div>
+            </div>
+
+            <div className={styles.contractContent}>
+              <label>Tipo de Contrato:</label>
+              <div className={styles.inputContainer} >
+              <input className={styles.input} placeholder="Alguel" />
+              <AiOutlineEdit size={15} className={styles.editIcon} />
+              </div>
+            </div>
+          
+        </form>
+
       </main>
     </div>
   );
 }
 
-export const getServerSideProps = canSSRAuth(async (context) => {
+// export const getServerSideProps = canSSRAuth(async (context) => {
 
-  return{
-    props: {}
-  }
+//   return{
+//     props: {}
+//   }
 
-})
+// })
 
