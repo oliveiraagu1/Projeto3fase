@@ -43,6 +43,13 @@ public class UserController {
         return new ResponseEntity<SessionResponseDTO>(userService.session(user), HttpStatus.OK);
     }
 
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Void> deleteContract(@PathVariable Long id){
+        userService.deleteUser(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+
 
 
 }

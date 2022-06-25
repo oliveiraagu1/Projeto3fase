@@ -20,6 +20,11 @@ public class ContractController {
         this.contractService = contractService;
     }
 
+    @GetMapping("/list")
+    public ResponseEntity<List<ContractResponseDTO>> listAll(){
+        return new ResponseEntity<>(contractService.listAllContracts(), HttpStatus.OK);
+    }
+
     @GetMapping("/list/{id}")
     public ResponseEntity<List<ContractResponseDTO>> listContract(@PathVariable Long id){
 
@@ -33,10 +38,12 @@ public class ContractController {
         return new ResponseEntity<ContractResponseDTO>(ContractResponseDTO.transformEmDTO(contractCreated), HttpStatus.CREATED);
     }
 
-    @GetMapping("/list")
-    public ResponseEntity<List<ContractResponseDTO>> listAll(){
-        return new ResponseEntity<>(contractService.listAllContracts(), HttpStatus.OK);
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Void> deleteContract(@PathVariable Long id){
+        contractService.deleteContract(id);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
+
 
 }
 
