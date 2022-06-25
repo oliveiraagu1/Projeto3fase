@@ -7,10 +7,13 @@ import { LogoMenor } from "../../components/Logo";
 import { AuthContext } from "../../contexts/AuthContext";
 import { canSSRAuth } from "../../utils/canSSRAuth";
 import { setupAPIClient } from "../../services/api";
+import { FaTruckMonster } from "react-icons/fa";
 
 export default function History({ contractList }) {
   const { user } = useContext(AuthContext);
   const [visible, setVisible] = useState(false);
+
+  const [data] = useState(contractList.filter( index => index.userId === user.id));
 
   return (
     <div className={visible ? styles.container : styles.containerClose}>
@@ -33,14 +36,12 @@ export default function History({ contractList }) {
       </div>
 
       <div className={styles.grid}>
-        {contractList.map((item) => (
-          <React.Fragment key={item.id}>
-            <HistoryItem data={item} />
-          </React.Fragment>
+        {data.map((item) => (
+          <HistoryItem data={item} key={item.id} />
         ))}
       </div>
 
-      {contractList.length === 0 && (
+      {data.length === 0 && (
         <div className={styles.empty}>
           <span>Você não possui nenhum cadastro no sistema.... 🙁</span>
         </div>
@@ -52,7 +53,7 @@ export default function History({ contractList }) {
 export const getServerSideProps = canSSRAuth(async (context) => {
   const apiClient = setupAPIClient(context);
 
-  const response = await apiClient.get(`contract/list/${user.id}`);
+  const response = await apiClient.get('contract/list');
 
   return {
     props: {

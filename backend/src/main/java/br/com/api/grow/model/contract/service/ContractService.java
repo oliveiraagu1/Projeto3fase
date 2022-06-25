@@ -19,12 +19,21 @@ public class ContractService {
         this.contractRepository = contractRepository;
     }
 
+    public List<ContractResponseDTO> listAllContracts(){
+        List<ContractResponseDTO> listContract = new ArrayList<>();
+        for(ContractModel cm : contractRepository.findAll()){
 
-    public List<ContractResponseDTO> listContractUserId(Long userId){
+            listContract.add(transformEmDTO(cm));
+        }
+        return listContract;
+    }
+
+
+    public List<ContractResponseDTO> listContractById(Long id){
 
         List<ContractResponseDTO> listContract = new ArrayList<>();
 
-        for(ContractModel cm : contractRepository.findAllByUser_IdEquals(userId)){
+        for(ContractModel cm : contractRepository.findAllById(id)){
 
             listContract.add(transformEmDTO(cm));
         }

@@ -20,10 +20,10 @@ public class ContractController {
         this.contractService = contractService;
     }
 
-    @GetMapping("/list/{userId}")
-    public ResponseEntity<List<ContractResponseDTO>> listContract(@PathVariable Long userId){
+    @GetMapping("/list/{id}")
+    public ResponseEntity<List<ContractResponseDTO>> listContract(@PathVariable Long id){
 
-        return new ResponseEntity<>(contractService.listContractUserId(userId), HttpStatus.OK);
+        return new ResponseEntity<>(contractService.listContractById(id), HttpStatus.OK);
     }
 
     @PostMapping("/created")
@@ -31,6 +31,11 @@ public class ContractController {
 
         ContractModel contractCreated = contractService.create(dto.transformObject());
         return new ResponseEntity<ContractResponseDTO>(ContractResponseDTO.transformEmDTO(contractCreated), HttpStatus.CREATED);
+    }
+
+    @GetMapping("/list")
+    public ResponseEntity<List<ContractResponseDTO>> listAll(){
+        return new ResponseEntity<>(contractService.listAllContracts(), HttpStatus.OK);
     }
 
 }
