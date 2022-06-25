@@ -38,7 +38,7 @@ public class UserModel {
     @JoinColumn(name = "roleId", referencedColumnName = "id")
    private RoleModel roles;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
     private List<ContractModel> contracts;
 
 

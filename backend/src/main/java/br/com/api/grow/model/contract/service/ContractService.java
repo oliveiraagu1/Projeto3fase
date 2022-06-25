@@ -28,7 +28,6 @@ public class ContractService {
         return listContract;
     }
 
-
     public List<ContractResponseDTO> listContractById(Long id){
 
         List<ContractResponseDTO> listContract = new ArrayList<>();
@@ -44,5 +43,10 @@ public class ContractService {
     public ContractModel create(ContractModel contractModel){
 
         return contractRepository.save(contractModel);
+    }
+
+
+    public void deleteContract(Long id){
+       contractRepository.deleteById(id);
     }
 }
