@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface ContractRepository extends JpaRepository<ContractModel, Long> {
 
-    List<ContractModel> findAllByUser_IdEquals(Long userId);
+    List<ContractModel> findAllById(Long userId);
 
 }
