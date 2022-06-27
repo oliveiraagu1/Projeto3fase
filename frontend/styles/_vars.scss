@@ -16,7 +16,7 @@ $linearPink: linear-gradient(
   $dark-pink 0%,
   $pink 85%
 );
-$linearGreen: inear-gradient(
+$linearGreen: linear-gradient(
   135deg,
   $dark-green 0%,
   $green 100%
@@ -30,15 +30,3 @@ $fontSemiBold: 600;
 $fontBold: 700;
 $fontExtraBold: 800;
 $fontBlack: 900;
-
-.modal{
-  max-width: 500px;
-  height: 400px;
-  background: #ffffffe6;
-  border-radius: 90px;
-  margin: 0 auto;
-
-  &Account{
-    @extend .modal;
-  }
-}

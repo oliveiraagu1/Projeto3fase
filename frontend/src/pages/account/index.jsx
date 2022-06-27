@@ -1,4 +1,5 @@
 import styles from "./styles.module.scss";
+import globalStyles from "../../../styles/global.module.scss"
 import Link from "next/link";
 import { LogoMenor } from "../../components/Logo";
 import SlideBar from "../../components/ui/SlideBar";
@@ -16,7 +17,7 @@ export default function myAccount() {
         <SlideBar />
         <LogoMenor />
       </div>
-      <div className={styles.modalAccount}>
+      <div className={globalStyles.modal}>
         <div className={styles.photo}>
           <AiOutlineUser size={50} />
         </div>

@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import styles from "./styles.module.scss";
+import globalStyles from "../../../../styles/global.module.scss";
 import Button from "../Button";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -53,7 +54,7 @@ export function FormContract() {
             className={
               errors.name?.type === "required" || errors.name?.type === "name"
                 ? styles.inputError
-                : styles.input
+                : globalStyles.input
             }
             type="text"
             placeholder="Nome do contrato"
@@ -68,7 +69,7 @@ export function FormContract() {
             className={
               errors.registration?.type === "min"
                 ? styles.inputError
-                : styles.input
+                : globalStyles.input
             }
             type="number"
             placeholder="Digite sua matrícula"
@@ -83,7 +84,7 @@ export function FormContract() {
             className={
               errors.date?.type === "required"
                 ? styles.inputError
-                : styles.input
+                : globalStyles.input
             }
             type="date"
           />
@@ -96,7 +97,7 @@ export function FormContract() {
             className={
               errors.propertyCode?.type === "required"
                 ? styles.inputError
-                : styles.input
+                : globalStyles.input
             }
             type="number"
             placeholder="Digite o código do imóvel"
@@ -110,7 +111,7 @@ export function FormContract() {
             className={
               errors.typeProperty?.type === "required"
                 ? styles.inputError
-                : styles.input
+                : globalStyles.input
             }
           >
             <option value="">Selecione</option>
@@ -137,7 +138,7 @@ export function FormContract() {
           <p className={styles.errors}>{errors.typeAgreement?.message}</p>
         </div>
         <div className={styles.buttonContainer}>
-          <Button className={styles.button} loading={loading} type="submit">
+          <Button className={globalStyles.button} loading={loading} type="submit">
             CADASTRAR
           </Button>
         </div>

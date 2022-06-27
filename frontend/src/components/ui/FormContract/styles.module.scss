@@ -9,15 +9,11 @@
   max-width: 1250px;
 }
 
-.input {
-  height: 40px;
-  border-radius: 5px;
-  color: $black;
-  padding: 10px;
-  width: 70%;
-  margin: 0 auto;
-  border: none;
+.input{
+  @extend .input;
+  height: 30px;
 }
+
 .input::placeholder {
   color: $black;
 }
@@ -41,10 +37,12 @@
 .textLogin {
   font-size: 12px;
   font-weight: $fontBold;
+  font-family: $primaryFont;
   color: $black;
   padding: 10px 0 8px 0;
   width: 70%;
   margin: 0 auto;
+
 }
 
 .content{
@@ -63,6 +61,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: $primaryFont;
 
   h1 {
     font-size: 34px;
