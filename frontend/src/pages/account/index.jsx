@@ -13,7 +13,7 @@ export default function myAccount() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.containerLogoAccount}>
+      <div className={globalStyles.containerLogoAccount}>
         <SlideBar />
         <LogoMenor />
       </div>

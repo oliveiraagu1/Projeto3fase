@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import Head from "next/head";
 import styles from "./styles.module.scss";
+import globalStyles from "../../../styles/global.module.scss";
 import SlideBar from "../../components/ui/SlideBar";
 import { FormContract } from "../../components/ui/FormContract";
 import { LogoMenor } from "../../components/Logo";
@@ -17,19 +18,19 @@ export default function Contract() {
         <title>Grow - Cadastre um contrato</title>
       </Head>
 
+    <div className={globalStyles.containerLogoAccount}>
       <button
         className={styles.burguerContainer}
         onClick={() => setVisible(!visible)}
       >
         <SlideBar visible={visible} />
       </button>
-
-      <main className={styles.main}>
       <div className={styles.image}>
         <LogoMenor />
       </div>
+    </div>
 
-        
+      <main className={styles.main}>
         <div className={styles.grid}>
           <FormContract />
         </div>

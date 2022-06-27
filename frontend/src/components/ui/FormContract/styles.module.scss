@@ -9,9 +9,8 @@
   max-width: 1250px;
 }
 
-.input{
-  @extend .input;
-  height: 30px;
+.inputSelect{
+  padding: 20px 0;
 }
 
 .input::placeholder {
