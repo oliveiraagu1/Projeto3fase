@@ -1,4 +1,4 @@
-import styles from "../../styles/Home.module.scss";
+import styles from "../../styles/global.module.scss";
 import Head from "next/head";
 import Link from "next/link";
 import { Logo, LogoMenor } from "../components/Logo";
@@ -6,7 +6,6 @@ import { FormLogin } from "../components/ui/FormLogin";
 import { canSSRGuest } from '../utils/canSSRGuest';
 
 export default function Login() {
-
   
   return (
     <div className={styles.container}>
