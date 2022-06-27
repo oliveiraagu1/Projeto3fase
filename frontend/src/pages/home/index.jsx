@@ -13,6 +13,7 @@ import { canSSRAuth } from '../../utils/canSSRAuth'
 export default function Home() {
   const { user } = useContext(AuthContext);
   const [visible, setVisible] = useState(false);
+  
 
   return (
     <section className={styles.fullContainer}>
@@ -32,8 +33,7 @@ export default function Home() {
             visible
               ? styles.containerHistorico
               : styles.containerHistoricoClosed
-          }
-        >
+          } >
           <Link href={"/history"}>
             <button className={styles.historicoUm}>
               <h1>#01</h1>
@@ -73,8 +73,8 @@ export default function Home() {
   );
 }
 
-export const getServerSideProps = canSSRAuth(async (context) => {
-  return {
-    props: {},
-  };
-});
+// export const getServerSideProps = canSSRAuth(async (context) => {
+//   return {
+//     props: {},
+//   };
+// });
