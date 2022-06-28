@@ -43,7 +43,7 @@ export function FormContract() {
   return (
     <div className={styles.mainContainer}>
       <div className={styles.title}>
-        <h1>Registe um contrato</h1>
+        <h1>Registre um contrato</h1>
       </div>
 
       <form onSubmit={handleSubmit(handleContract)} className={styles.form}>
