@@ -44,12 +44,12 @@ export default function Contract() {
 }
 
 
-export const getServerSideProps = canSSRAuth(async (context) => {
+// export const getServerSideProps = canSSRAuth(async (context) => {
 
-  return{
-    props: {}
-  }
+//   return{
+//     props: {}
+//   }
 
-})
+// })
 
 

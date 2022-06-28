@@ -53,7 +53,7 @@ export function FormContract() {
             {...register("name")}
             className={
               errors.name?.type === "required" || errors.name?.type === "name"
-                ? styles.inputError
+                ? globalStyles.inputError
                 : globalStyles.input
             }
             type="text"
@@ -68,7 +68,7 @@ export function FormContract() {
             {...register("registration")}
             className={
               errors.registration?.type === "min"
-                ? styles.inputError
+                ? globalStyles.inputError
                 : globalStyles.input
             }
             type="number"
@@ -83,7 +83,7 @@ export function FormContract() {
             {...register("date")}
             className={
               errors.date?.type === "required"
-                ? styles.inputError
+                ? globalStyles.inputError
                 : globalStyles.input
             }
             type="date"
@@ -96,7 +96,7 @@ export function FormContract() {
             {...register("propertyCode")}
             className={
               errors.propertyCode?.type === "required"
-                ? styles.inputError
+                ? globalStyles.inputError
                 : globalStyles.input
             }
             type="number"
@@ -110,8 +110,8 @@ export function FormContract() {
             {...register("typeProperty")}
             className={
               errors.typeProperty?.type === "required"
-                ? styles.inputError
-                : styles.input
+                ? globalStyles.inputError
+                : styles.inputSelect
             }
           >
             <option value="">Selecione</option>
@@ -127,7 +127,7 @@ export function FormContract() {
             {...register("typeAgreement")}
             className={
               errors.typeAgreement?.type === "required"
-                ? styles.inputError
+                ? globalStyles.inputError
                 : styles.inputSelect
             }
           >

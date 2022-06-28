@@ -42,7 +42,7 @@ export function FormLogin() {
       <label className={styles.textLogin}>Email:</label>
       <input
         {...register("email")}
-        className={errors.email?.type === 'required' || errors.email?.type === 'email'  ? styles.inputError : globalStyles.input}
+        className={errors.email?.type === 'required' || errors.email?.type === 'email'  ? globalStyles.inputError : globalStyles.input}
         type="text"
         placeholder="Digite o seu e-mail"
       />
@@ -51,7 +51,7 @@ export function FormLogin() {
       <label className={styles.textLogin}>Senha:</label>
       <input
         {...register("password")}
-        className={errors.email?.password === 'required' || errors.password?.type === 'min'  ? styles.inputError : globalStyles.input}
+        className={errors.email?.password === 'required' || errors.password?.type === 'min'  ? globalStyles.inputError : globalStyles.input}
         type="password"
         placeholder="Digite a sua senha"
       />
