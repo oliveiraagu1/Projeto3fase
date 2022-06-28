@@ -29,6 +29,14 @@
   max-width: 200px;
 }
 
+/*Side bar*/
+.burguerContainer{
+  background: $linearGreen;
+  height: 50px;
+  width: 50px;
+  border: none;
+}
+
 .container {
   background-image: linear-gradient(to right, $dark-green, $pink);
   width: 100%;

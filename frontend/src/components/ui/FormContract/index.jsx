@@ -111,7 +111,7 @@ export function FormContract() {
             className={
               errors.typeProperty?.type === "required"
                 ? styles.inputError
-                : globalStyles.input
+                : styles.input
             }
           >
             <option value="">Selecione</option>

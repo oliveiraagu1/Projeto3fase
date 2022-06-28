@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import styles from "./styles.module.scss";
+import globalStyles from "../../../../styles/global.module.scss";
 import Button from "../Button";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -41,7 +42,7 @@ export function FormLogin() {
       <label className={styles.textLogin}>Email:</label>
       <input
         {...register("email")}
-        className={errors.email?.type === 'required' || errors.email?.type === 'email'  ? styles.inputError : styles.input}
+        className={errors.email?.type === 'required' || errors.email?.type === 'email'  ? styles.inputError : globalStyles.input}
         type="text"
         placeholder="Digite o seu e-mail"
       />
@@ -50,7 +51,7 @@ export function FormLogin() {
       <label className={styles.textLogin}>Senha:</label>
       <input
         {...register("password")}
-        className={errors.email?.password === 'required' || errors.password?.type === 'min'  ? styles.inputError : styles.input}
+        className={errors.email?.password === 'required' || errors.password?.type === 'min'  ? styles.inputError : globalStyles.input}
         type="password"
         placeholder="Digite a sua senha"
       />

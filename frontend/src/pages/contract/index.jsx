@@ -20,7 +20,7 @@ export default function Contract() {
 
     <div className={globalStyles.containerLogoAccount}>
       <button
-        className={styles.burguerContainer}
+        className={globalStyles.burguerContainer}
         onClick={() => setVisible(!visible)}
       >
         <SlideBar visible={visible} />
