@@ -1,9 +1,11 @@
 .container {
   transition: 0.5s;
-  transform: translateX(230px);
+  transform: translateX(224px);
+  margin-top: -1px;
 }
 
 .closeContainer{
+  margin-top: -1px;
   transition: 0.5s;
-  transform: translateX(-230px);
+  transform: translateX(-236px);
 }
