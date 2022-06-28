@@ -9,7 +9,7 @@ const dados = [
     },
     {
         id: 2,
-        value: 100,
+        value: 50,
     },
 ]
 

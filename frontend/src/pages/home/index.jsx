@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import styles from "./styles.module.scss";
+import globalStyles from "../../../styles/global.module.scss"
 import Head from "next/head";
 import Link from "next/link";
 import { toast } from "react-toastify";
@@ -21,7 +22,7 @@ export default function Home() {
         <title>Grow - Home</title>
       </Head>
       <button
-        className={styles.burguerContainer}
+        className={globalStyles.burguerContainer}
         onClick={() => setVisible(!visible)}
       >
         <SlideBar visible={visible} />
@@ -67,14 +68,14 @@ export default function Home() {
       </div>
 
       <footer className={styles.footer}>
-        <p>{user.name}</p>
+        <p className={styles.nameFooter}>{user.name}</p>
       </footer>
     </section>
   );
 }
 
-// export const getServerSideProps = canSSRAuth(async (context) => {
-//   return {
-//     props: {},
-//   };
-// });
+export const getServerSideProps = canSSRAuth(async (context) => {
+  return {
+    props: {},
+  };
+});

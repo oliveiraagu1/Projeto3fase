@@ -4,17 +4,24 @@ import Link from "next/link";
 import { LogoMenor } from "../../components/Logo";
 import SlideBar from "../../components/ui/SlideBar";
 import { AuthContext } from "../../contexts/AuthContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { FaEraser, FaUserAlt } from "react-icons/fa";
 import { AiOutlineUser } from "react-icons/ai";
 
 export default function myAccount() {
+
   const { user } = useContext(AuthContext);
+  const [visible, setVisible] = useState(false);
 
   return (
     <div className={styles.container}>
-      <div className={styles.containerLogoAccount}>
-        <SlideBar />
+      <div className={globalStyles.containerLogoAccount}>
+      <button
+        className={globalStyles.burguerContainer}
+        onClick={() => setVisible(!visible)}
+      >
+        <SlideBar visible={visible} />
+      </button>
         <LogoMenor />
       </div>
       <div className={globalStyles.modal}>

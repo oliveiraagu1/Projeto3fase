@@ -7,6 +7,7 @@ import { setupAPIClient } from "../../services/api";
 import Link from "next/link";
 import Head from "next/head";
 import styles from "./styles.module.scss";
+import globalStyles from "../../../styles/global.module.scss"
 import SlideBar from "../../components/ui/SlideBar";
 
 export default function HistoryId({ historyContract }) {
@@ -19,7 +20,7 @@ export default function HistoryId({ historyContract }) {
       </Head>
 
       <button
-        className={styles.burguerContainer}
+        className={globalStyles.burguerContainer}
         onClick={() => setVisible(!visible)}
       >
         <SlideBar visible={visible} />

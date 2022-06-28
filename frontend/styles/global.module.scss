@@ -20,6 +20,23 @@
   outline: none;
 }
 
+.containerLogoAccount{
+  padding: 10px 0;
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  max-width: 200px;
+}
+
+/*Side bar*/
+.burguerContainer{
+  background: $linearGreen;
+  height: 50px;
+  width: 50px;
+  border: none;
+}
+
 .container {
   background-image: linear-gradient(to right, $dark-green, $pink);
   width: 100%;
@@ -31,10 +48,36 @@
   justify-content: center;
 }
 
+
+/*button*/
 .button{
-  background-color: $dark-green;
+  background-color: $green;
+  border: 0;
+  border-radius: 5px;
+  color: $white;
+  transition: filter 0.2s;
+  width: 200px;
+  height: 40px;
+  margin: 20px auto;
+
+  &:disabled {
+    cursor: not-allowed;
+
+    svg {
+      animation: animate 2s infinite;
+    }
+  }
+
+  &:hover {
+    filter: brightness(1.08);
+  }
 }
 
+.buttonText {
+  color: $black;
+  font-size: 12px;
+  font-weight: 500;
+}
 
 .main {
   border-radius: 40px;

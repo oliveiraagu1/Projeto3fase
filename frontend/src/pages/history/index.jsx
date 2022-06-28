@@ -1,6 +1,7 @@
 import React, { useState, useContext, useLayoutEffect } from "react";
 import Head from "next/head";
 import styles from "./styles.module.scss";
+import globalStyles from "../../../styles/global.module.scss"
 import HistoryItem from "../../components/ui/HisotryItem";
 import SlideBar from "../../components/ui/SlideBar";
 import { LogoMenor } from "../../components/Logo";
@@ -22,7 +23,7 @@ export default function History({ contractList }) {
       </Head>
 
       <button
-        className={styles.burguerContainer}
+        className={globalStyles.burguerContainer}
         onClick={() => setVisible(!visible)}
       >
         <SlideBar visible={visible} />
