@@ -74,8 +74,8 @@ export default function Home() {
   );
 }
 
-// export const getServerSideProps = canSSRAuth(async (context) => {
-//   return {
-//     props: {},
-//   };
-// });
+export const getServerSideProps = canSSRAuth(async (context) => {
+  return {
+    props: {},
+  };
+});

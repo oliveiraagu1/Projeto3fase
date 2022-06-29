@@ -3,17 +3,24 @@ import { AuthContext } from "../../contexts/AuthContext";
 import { useContext, useState } from "react";
 import { FaEraser, FaUserAlt } from "react-icons/fa";
 import { AiOutlineUser } from "react-icons/ai";
+import { destroyCookie } from "nookies";
+import { toast } from "react-toastify";
 import styles from "./styles.module.scss";
-import globalStyles from "../../../styles/global.module.scss"
+import globalStyles from "../../../styles/global.module.scss";
 import Link from "next/link";
 import SlideBar from "../../components/ui/SlideBar";
-import ModalSenha from "../../components/ui/ModalPassword"
+import ModalSenha from "../../components/ui/ModalPassword";
+
 
 export default function myAccount() {
-
-  const { user } = useContext(AuthContext);
+  const { user, handleDeleteAccount } = useContext(AuthContext);
   const [visible, setVisible] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
+
+  function handleSignOut() {
+    destroyCookie(undefined, "@nextauth.token");
+    toast.success("Deslogado com sucesso! 👋");
+  }
 
   return (
     <div className={modalVisible ? styles.containerModal : styles.container}>
@@ -33,7 +40,7 @@ export default function myAccount() {
         <div className={styles.dados}>
           <div className={styles.containerElementos}>
             <p>Nome:</p>
-            <p>{user.nome}</p>
+            <p>{user.name}</p>
           </div>
           <div className={styles.containerElementos}>
             <p>E-mail:</p>
@@ -41,8 +48,14 @@ export default function myAccount() {
           </div>
           <div className={styles.containerElementos}>
             <p>Senha: **********</p>
-            <button className={styles.buttonSenha} onClick={() => setModalVisible(true)}>
-              <ModalSenha modalVisible={modalVisible} onClose={() => setModalVisible(false) } />
+            <button
+              className={styles.buttonSenha}
+              onClick={() => setModalVisible(true)}
+            >
+              <ModalSenha
+                modalVisible={modalVisible}
+                onClose={() => setModalVisible(false)}
+              />
             </button>
           </div>
           <div className={styles.containerElementos}>
@@ -51,14 +64,20 @@ export default function myAccount() {
           </div>
         </div>
         <div className={styles.containerButton}>
-          <Link href={"/contract"}>
+          <Link href={"/history"}>
             <button className={styles.buttonMyAccount}>
               Acessar histórico
             </button>
           </Link>
           <Link href={"/"}>
-            <button className={styles.buttonLogout}>Sair da conta</button>
+            <button className={styles.buttonLogout} onClick={handleSignOut}>
+              Sair da conta
+            </button>
           </Link>
+
+          <button className={styles.buttonLogout} onClick={handleDeleteAccount}>
+            Excluir conta
+          </button>
         </div>
       </div>
     </div>
