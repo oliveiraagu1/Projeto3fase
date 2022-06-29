@@ -1,27 +1,29 @@
-import styles from "./styles.module.scss";
-import globalStyles from "../../../styles/global.module.scss"
-import Link from "next/link";
 import { LogoMenor } from "../../components/Logo";
-import SlideBar from "../../components/ui/SlideBar";
 import { AuthContext } from "../../contexts/AuthContext";
 import { useContext, useState } from "react";
 import { FaEraser, FaUserAlt } from "react-icons/fa";
 import { AiOutlineUser } from "react-icons/ai";
+import styles from "./styles.module.scss";
+import globalStyles from "../../../styles/global.module.scss"
+import Link from "next/link";
+import SlideBar from "../../components/ui/SlideBar";
+import ModalSenha from "../../components/ui/ModalPassword"
 
 export default function myAccount() {
 
   const { user } = useContext(AuthContext);
   const [visible, setVisible] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
 
   return (
-    <div className={styles.container}>
+    <div className={modalVisible ? styles.containerModal : styles.container}>
       <div className={globalStyles.containerLogoAccount}>
-      <button
-        className={globalStyles.burguerContainer}
-        onClick={() => setVisible(!visible)}
-      >
-        <SlideBar visible={visible} />
-      </button>
+        <button
+          className={globalStyles.burguerContainer}
+          onClick={() => setVisible(!visible)}
+        >
+          <SlideBar visible={visible} />
+        </button>
         <LogoMenor />
       </div>
       <div className={globalStyles.modal}>
@@ -39,11 +41,9 @@ export default function myAccount() {
           </div>
           <div className={styles.containerElementos}>
             <p>Senha: **********</p>
-            <Link href={"/modalPassword"}>
-              <button className={styles.buttonSenha}>
-                <FaEraser width={20} />
-              </button>
-            </Link>
+            <button className={styles.buttonSenha} onClick={() => setModalVisible(true)}>
+              <ModalSenha modalVisible={modalVisible} onClose={() => setModalVisible(false) } />
+            </button>
           </div>
           <div className={styles.containerElementos}>
             <p>Minha matricula:</p>

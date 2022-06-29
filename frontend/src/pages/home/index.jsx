@@ -14,7 +14,7 @@ import { canSSRAuth } from '../../utils/canSSRAuth'
 export default function Home() {
   const { user } = useContext(AuthContext);
   const [visible, setVisible] = useState(false);
-  
+
 
   return (
     <section className={styles.fullContainer}>
