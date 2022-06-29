@@ -45,8 +45,8 @@ public class ContractService {
         return contractRepository.save(contractModel);
     }
 
-
     public void deleteContract(Long id){
        contractRepository.deleteById(id);
     }
+
 }
