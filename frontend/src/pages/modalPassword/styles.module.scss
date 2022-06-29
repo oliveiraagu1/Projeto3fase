@@ -1,8 +1,0 @@
-@import '../../../styles/_vars.scss';
-
-.modalPassword{
-    background: $linearPink;
-}
-.mainPassword{
-    @extend .modal;
-}

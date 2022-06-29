@@ -18,21 +18,6 @@
   color: var(--black);
 }
 
-.inputError{
-  height: 40px;
-  border-radius: 5px;
-  color: var(--black);
-  padding: 10px;
-  width: 80%;
-  margin: 0 auto;
-  border: 1px solid red;
-}
-
-.errors{
-  margin: 10px auto;
-  color: red;
-}
-
 .textLogin {
   font-size: 18px;
   font-weight: $fontRegular;

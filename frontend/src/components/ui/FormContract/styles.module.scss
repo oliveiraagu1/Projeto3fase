@@ -1,4 +1,5 @@
 @import '../../../../styles/vars';
+@import '../../../../styles/global.module.scss';
 
 .form {
   display: grid;
@@ -10,27 +11,13 @@
 }
 
 .inputSelect{
-  padding: 20px 0;
+  @include input;
+  height: 40px;
+  width: 75%;
 }
 
 .input::placeholder {
   color: $black;
-}
-
-.inputError {
-  height: 40px;
-  border-radius: 5px;
-  color: $black;
-  padding: 10px;
-  width: 70%;
-  margin: 0 auto;
-  border: 1px solid red;
-}
-
-.errors {
-  margin: 10px auto;
-  color: red;
-  font-size: 12px;
 }
 
 .textLogin {
@@ -41,7 +28,6 @@
   padding: 10px 0 8px 0;
   width: 70%;
   margin: 0 auto;
-
 }
 
 .content{
@@ -51,7 +37,7 @@
 .mainContainer{
   background: rgba(255, 255, 255, 0.3019607843);
   border-radius: 25px;
-  width: 700px;
+  max-width: 700px;
   margin: 0 auto;
   height: fit-content;
   padding: 20px;
@@ -70,4 +56,13 @@
   display: flex;
   justify-content: center;
   grid-area: 4 / 1 / 5 / 3;
+}
+
+@media(max-width: 768px){
+  .form{
+    display: block;
+  }
+  .mainContainer{
+    margin: 0 20px;
+  }
 }

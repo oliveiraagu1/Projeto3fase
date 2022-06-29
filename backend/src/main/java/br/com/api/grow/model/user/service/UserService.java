@@ -1,5 +1,7 @@
 package br.com.api.grow.model.user.service;
 
+import br.com.api.grow.model.role.entity.RoleModel;
+import br.com.api.grow.model.user.DTO.PasswordDTO;
 import br.com.api.grow.model.user.DTO.SessionDTO;
 import br.com.api.grow.model.user.DTO.SessionResponseDTO;
 import br.com.api.grow.model.user.entity.UserModel;
@@ -55,6 +57,32 @@ public class UserService {
                 userLogin.getRoles().getId(),
                 token
         );
+    }
+
+    public void changePassword(Long id, PasswordDTO passwordDTO){
+
+        UserModel userId = userRepository.findById(id)
+                .orElseThrow(()-> new RuntimeException("Error: Id does not exist or value is wrong"));
+
+
+        boolean passwordEquals = passwordEncoder.matches(passwordDTO.getOldPassword(), userId.getPassword());
+
+        if (passwordEquals) {
+            userId.setId(id);
+            userId.setEmail(passwordDTO.getEmail());
+            userId.setName(passwordDTO.getName());
+            userId.setPassword(passwordEncoder.encode(passwordDTO.getNewPassword()));
+            userId.setRegistration(passwordDTO.getRegistration());
+            userId.setRoles(new RoleModel(passwordDTO.getIdRole()));
+
+            userRepository.save(userId);
+
+        }else {
+            throw new IllegalArgumentException("User or password incorrect");
+        }
+
+
+
     }
 
     public void deleteUser(Long id){

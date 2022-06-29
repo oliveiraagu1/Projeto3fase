@@ -44,7 +44,7 @@ export function AuthProvider({ children }) {
       });
 
       setCookie(undefined, "@nextauth.token", token, {
-        maxAge: 30000, // Expirar em 5 minutos
+        maxAge: 30000, // Expirar em 30 minutos
         path: "/", // Quais caminhos terão acesso ao cookie
       });
 
@@ -87,7 +87,7 @@ export function AuthProvider({ children }) {
   }) {
 
     try {
-      const response = await api.post("contract/created", {
+      await api.post("contract/created", {
         name,
         date,
         typeProperty,
@@ -104,6 +104,19 @@ export function AuthProvider({ children }) {
     }
   }
 
+  async function handleDeleteAccount(){
+
+    try{
+      await api.delete(`user/delete/8`)
+      destroyCookie(undefined, "@nextauth.token");
+      toast.success("Sua conta foi deletada... 😥 Até breve!"); 
+      Router.push("/");
+    }catch (err){
+      toast.error("Error ao deletar a conta!");  
+    }
+  }
+
+
   return (
     <AuthContext.Provider
       value={{
@@ -113,6 +126,7 @@ export function AuthProvider({ children }) {
         signUp,
         createContract,
         signOut,
+        handleDeleteAccount,
       }}
     >
       {children}

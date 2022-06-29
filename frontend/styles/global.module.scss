@@ -4,11 +4,11 @@
   max-width: 500px;
   height: 400px;
   background: #ffffffe6;
-  border-radius: 90px;
+  border-radius: 40px;
   margin: 0 auto;
 }
 
-.input{
+@mixin input {
   height: 20px;
   font-family: $primaryFont;
   border-radius: 5px;
@@ -18,6 +18,10 @@
   margin: 0 auto;
   border: none;
   outline: none;
+}
+
+.input{
+  @include input;
 }
 
 .containerLogoAccount{
@@ -48,6 +52,26 @@
   justify-content: center;
 }
 
+
+/*input e mensagem de erro*/
+
+.inputError {
+  height: 20px;
+  border-radius: 5px;
+  color: $black;
+  padding: 10px;
+  width: 70%;
+  margin: 0 auto;
+  border: 1px solid red;
+  outline: none;
+}
+
+.errors {
+  margin: 10px auto;
+  color: red;
+  font-size: 12px;
+  font-family: $primaryFont;
+}
 
 /*button*/
 .button{
@@ -122,6 +146,7 @@
   height: 100vh;
   max-width: 1250px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .MainButtonLogin {
@@ -138,6 +163,9 @@
 @media(max-width: 768px){
   .main{
     width: 100%;
+    margin: 0 20px;
+  }
+  .modal{
     margin: 0 20px;
   }
 }
