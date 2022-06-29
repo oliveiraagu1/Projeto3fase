@@ -1,9 +1,6 @@
 package br.com.api.grow.controller;
 
-import br.com.api.grow.model.user.DTO.SessionDTO;
-import br.com.api.grow.model.user.DTO.SessionResponseDTO;
-import br.com.api.grow.model.user.DTO.UserDTO;
-import br.com.api.grow.model.user.DTO.UserResponseDTO;
+import br.com.api.grow.model.user.DTO.*;
 import br.com.api.grow.model.user.entity.UserModel;
 import br.com.api.grow.model.user.service.UserService;
 import org.springframework.http.HttpStatus;
@@ -43,13 +40,18 @@ public class UserController {
         return new ResponseEntity<SessionResponseDTO>(userService.session(user), HttpStatus.OK);
     }
 
+    @PutMapping("/change/{id}")
+    public ResponseEntity<Void> changePassword(@PathVariable Long id, @RequestBody PasswordDTO passwordDTO){
+
+        userService.changePassword(id, passwordDTO);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteContract(@PathVariable Long id){
         userService.deleteUser(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
-
 
 
 }
