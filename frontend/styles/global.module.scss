@@ -25,12 +25,11 @@
 }
 
 .containerLogoAccount{
-  padding: 10px 0;
   width: 100%;
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
-  max-width: 200px;
+  justify-content: center;
+  max-width: 240px;
 }
 
 /*Side bar*/
@@ -39,6 +38,8 @@
   height: 50px;
   width: 50px;
   border: none;
+  position: fixed;
+  top: 0;
 }
 
 .container {
@@ -167,5 +168,9 @@
   }
   .modal{
     margin: 0 20px;
+  }
+  .containerLogoAccount{
+    max-width: 100%;
+    margin-bottom: 20px;
   }
 }
