@@ -25,6 +25,8 @@ export function AuthProvider({ children }) {
     token: "",
   });
 
+  const [graphic, setGraphic] = useState({});
+
   async function signIn({ email, password }) {
     try {
       const response = await api.post("user/session", {
@@ -73,8 +75,22 @@ export function AuthProvider({ children }) {
       await Router.push("/");
     } catch (err) {
       toast.error("Erro ao cadastrar o usuário");
-      console.log(err);
     }
+  }
+
+  async function handleGraphic(){
+
+    try{
+      const response = await api.get(`contract/${user.id}`);
+
+      setGraphic(response.data);
+
+      toast.success("Seus contratos foram carregados com sucesso! 😄")
+      
+    }catch (err){
+      toast.error("Error ao carregar os contratos! 😥")
+    }
+    
   }
 
   async function createContract({
@@ -127,6 +143,9 @@ export function AuthProvider({ children }) {
         createContract,
         signOut,
         handleDeleteAccount,
+        handleGraphic,
+        graphic,
+        setGraphic
       }}
     >
       {children}
