@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect, useLayoutEffect } from "react";
 import { setupAPIClient } from "../../services/api";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../contexts/AuthContext";
@@ -11,20 +11,22 @@ import Link from "next/link";
 import SlideBar from "../../components/ui/SlideBar";
 import PieChart from "./PieChart";
 
-export default function Home({ contractList }) {
-  const { user } = useContext(AuthContext);
+export default function Home() {
+  const { user, handleGraphic, graphic } = useContext(AuthContext);
   const [visible, setVisible] = useState(false);
 
-  console.log(contractList);
+  useLayoutEffect( () => {
+    handleGraphic();
+  } , []);
 
   const dados = [
     {
       id: 1,
-      value: contractList.rent,
+      value: graphic.rent,
     },
     {
       id: 2,
-      value: contractList.sales,
+      value: graphic.sales,
     },
   ];
 
@@ -99,13 +101,8 @@ export default function Home({ contractList }) {
 }
 
 export const getServerSideProps = canSSRAuth(async (context) => {
-  const apiClient = setupAPIClient(context);
-
-  const response = await apiClient.get(`contract/1`);
-
+  
   return {
-    props: {
-      contractList: response.data,
-    },
+    props: {},
   };
 });
