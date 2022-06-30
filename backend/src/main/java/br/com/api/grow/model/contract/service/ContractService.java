@@ -1,5 +1,6 @@
 package br.com.api.grow.model.contract.service;
 
+import br.com.api.grow.model.contract.DTO.ContractGraphResponseDTO;
 import br.com.api.grow.model.contract.DTO.ContractResponseDTO;
 import br.com.api.grow.model.contract.entity.ContractModel;
 import br.com.api.grow.model.contract.repository.ContractRepository;
@@ -38,6 +39,23 @@ public class ContractService {
         }
 
         return listContract;
+    }
+
+    public ContractGraphResponseDTO graphList(Long userId){
+
+        Integer rent = contractRepository.findByRent(userId);
+        Integer sales = contractRepository.findBySales(userId);
+
+        ContractGraphResponseDTO contractGraphResponseDTO = new ContractGraphResponseDTO();
+
+        contractGraphResponseDTO.setRent(rent);
+        contractGraphResponseDTO.setSales(sales);
+
+        return new ContractGraphResponseDTO(
+                contractGraphResponseDTO.getRent(),
+                contractGraphResponseDTO.getSales()
+        );
+
     }
 
     public ContractModel create(ContractModel contractModel){
