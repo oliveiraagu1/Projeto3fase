@@ -1,20 +1,45 @@
-import { useState, useContext } from "react";
-import styles from "./styles.module.scss";
-import globalStyles from "../../../styles/global.module.scss"
-import Head from "next/head";
-import Link from "next/link";
+import { useState, useContext, useEffect, useLayoutEffect } from "react";
+import { setupAPIClient } from "../../services/api";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../contexts/AuthContext";
-import SlideBar from "../../components/ui/SlideBar";
 import { LogoHome } from "../../components/Logo";
+import { canSSRAuth } from "../../utils/canSSRAuth";
+import styles from "./styles.module.scss";
+import globalStyles from "../../../styles/global.module.scss";
+import Head from "next/head";
+import Link from "next/link";
+import SlideBar from "../../components/ui/SlideBar";
 import PieChart from "./PieChart";
-import { UserData } from "./Data";
-import { canSSRAuth } from '../../utils/canSSRAuth'
 
 export default function Home() {
-  const { user } = useContext(AuthContext);
+  const { user, handleGraphic, graphic } = useContext(AuthContext);
   const [visible, setVisible] = useState(false);
 
+  useLayoutEffect( () => {
+    handleGraphic();
+  } , []);
+
+  const dados = [
+    {
+      id: 1,
+      value: graphic.rent,
+    },
+    {
+      id: 2,
+      value: graphic.sales,
+    },
+  ];
+
+  const UserData = {
+    labels: ["Aluguel", "Venda"],
+
+    datasets: [
+      {
+        data: dados.map((data) => data.value),
+        backgroundColor: ["#57DACC", "#006D77"],
+      },
+    ],
+  };
 
   return (
     <section className={styles.fullContainer}>
@@ -34,7 +59,8 @@ export default function Home() {
             visible
               ? styles.containerHistorico
               : styles.containerHistoricoClosed
-          } >
+          }
+        >
           <Link href={"/history"}>
             <button className={styles.historicoUm}>
               <h1>#01</h1>
@@ -74,8 +100,9 @@ export default function Home() {
   );
 }
 
-// export const getServerSideProps = canSSRAuth(async (context) => {
-//   return {
-//     props: {},
-//   };
-// });
+export const getServerSideProps = canSSRAuth(async (context) => {
+  
+  return {
+    props: {},
+  };
+});

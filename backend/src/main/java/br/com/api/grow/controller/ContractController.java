@@ -1,6 +1,7 @@
 package br.com.api.grow.controller;
 
 import br.com.api.grow.model.contract.DTO.ContractDTO;
+import br.com.api.grow.model.contract.DTO.ContractGraphResponseDTO;
 import br.com.api.grow.model.contract.DTO.ContractResponseDTO;
 import br.com.api.grow.model.contract.entity.ContractModel;
 import br.com.api.grow.model.contract.service.ContractService;
@@ -30,6 +31,14 @@ public class ContractController {
 
         return new ResponseEntity<>(contractService.listContractById(id), HttpStatus.OK);
     }
+
+    @GetMapping("/{userId}")
+    public ResponseEntity<ContractGraphResponseDTO> Grafic(@PathVariable Long userId){
+
+
+        return new ResponseEntity<ContractGraphResponseDTO>(contractService.graphList(userId),HttpStatus.OK);
+    }
+
 
     @PostMapping("/created")
     public ResponseEntity<ContractResponseDTO> created(@RequestBody ContractDTO dto){
