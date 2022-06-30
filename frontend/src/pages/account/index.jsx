@@ -24,13 +24,13 @@ export default function myAccount() {
 
   return (
     <div className={modalVisible ? styles.containerModal : styles.container}>
-      <div className={globalStyles.containerLogoAccount}>
         <button
           className={globalStyles.burguerContainer}
           onClick={() => setVisible(!visible)}
         >
           <SlideBar visible={visible} />
         </button>
+      <div className={globalStyles.containerLogoAccount}>
         <LogoMenor />
       </div>
       <div className={globalStyles.modal}>

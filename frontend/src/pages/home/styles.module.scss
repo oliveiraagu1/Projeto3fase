@@ -117,3 +117,17 @@
   max-width: 300px;
   height: 100%;
 }
+@media(max-width: 768px){
+  .mainHome{
+    flex-direction: column;
+  }
+  .grow{
+    display: none;
+  }
+  .containerHistoricoClosed{
+    width: 100%;
+    align-items: center;
+    margin: 30px 0 0 0;
+    padding: 0
+  }
+}

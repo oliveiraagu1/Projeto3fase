@@ -18,13 +18,13 @@ export default function Contract() {
         <title>Grow - Cadastre um contrato</title>
       </Head>
 
-    <div className={globalStyles.containerLogoAccount}>
       <button
         className={globalStyles.burguerContainer}
         onClick={() => setVisible(!visible)}
       >
         <SlideBar visible={visible} />
       </button>
+    <div className={globalStyles.containerLogoAccount}>
       <div className={styles.image}>
         <LogoMenor />
       </div>
