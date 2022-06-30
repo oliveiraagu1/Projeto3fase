@@ -9,7 +9,7 @@ import styles from "./styles.module.scss";
 import globalStyles from "../../../styles/global.module.scss";
 import Link from "next/link";
 import SlideBar from "../../components/ui/SlideBar";
-import ModalSenha from "../../components/ui/ModalPassword";
+
 
 
 export default function myAccount() {
@@ -22,70 +22,92 @@ export default function myAccount() {
     toast.success("Deslogado com sucesso! 👋");
   }
 
+  function changePassword() {
+    alert('gustavo gay')
+  }
+
   return (
-    <div className={modalVisible ? styles.containerModal : styles.container}>
+    <div className={styles.container}>
+      <div className={globalStyles.containerLogoAccount}>
         <button
           className={globalStyles.burguerContainer}
           onClick={() => setVisible(!visible)}
         >
           <SlideBar visible={visible} />
         </button>
-      <div className={globalStyles.containerLogoAccount}>
-        <LogoMenor />
-      </div>
-      <div className={globalStyles.modal}>
-        <div className={styles.photo}>
-          <AiOutlineUser size={50} />
+        <div className={globalStyles.containerLogoAccount}>
+          <LogoMenor />
         </div>
-        <div className={styles.dados}>
-          <div className={styles.containerElementos}>
-            <p>Nome:</p>
-            <p>{user.name}</p>
+        <div className={globalStyles.modal}>
+          <div className={styles.photo}>
+            <AiOutlineUser size={50} />
           </div>
-          <div className={styles.containerElementos}>
-            <p>E-mail:</p>
-            <p>{user.email}</p>
-          </div>
-          <div className={styles.containerElementos}>
-            <p>Senha: **********</p>
-            <button
-              className={styles.buttonSenha}
-              onClick={() => setModalVisible(true)}
-            >
-              <ModalSenha
-                modalVisible={modalVisible}
-                onClose={() => setModalVisible(false)}
-              />
-            </button>
-          </div>
-          <div className={styles.containerElementos}>
-            <p>Minha matricula:</p>
-            <p>{user.registration}</p>
-          </div>
-        </div>
-        <div className={styles.containerButton}>
-          <Link href={"/history"}>
-            <button className={styles.buttonMyAccount}>
-              Acessar histórico
-            </button>
-          </Link>
-          <Link href={"/"}>
-            <button className={styles.buttonLogout} onClick={handleSignOut}>
-              Sair da conta
-            </button>
-          </Link>
+          <div className={styles.dados}>
+            <div className={styles.containerElementos}>
+              <p>Nome:</p>
+              <p>{user.name}</p>
+            </div>
+            <div className={styles.containerElementos}>
+              <p>E-mail:</p>
+              <p>{user.email}</p>
+            </div>
+            <div className={styles.containerElementos}>
+              <p>Senha: **********</p>
+            // --------- modal --------//
+              {modalVisible ? <div className={modalVisible ? styles.containerModal : styles.container} >
+                <div className={styles.contentModal}>
+                  <h1>Trocar Senha</h1>
+                  <div className={styles.inputContainerModal}>
+                    <label>Senha Atual: </label>
+                    <input type="password" className={styles.inputs} placeholder="Digite sua senha atual" />
+                  </div>
+                  <div className={styles.inputContainerModal}>
+                    <label>Nova Senha: </label>
+                    <input type="password" className={styles.inputs} placeholder="Digite sua nova senha" />
+                  </div>
+                  <button onClick={() => changePassword()}>Confirmar</button>
 
-          <button className={styles.buttonLogout} onClick={handleDeleteAccount}>
-            Excluir conta
-          </button>
+                  <button onClick={() => setModalVisible(false)}>Cancelar</button>
+
+                </div>
+              </div>
+                : <a
+                  className={styles.buttonSenha}
+                  onClick={() => setModalVisible(true)}
+                >
+                  <FaEraser width={20} />
+                </a>}
+
+            </div>
+            <div className={styles.containerElementos}>
+              <p>Minha matricula:</p>
+              <p>{user.registration}</p>
+            </div>
+          </div>
+          <div className={styles.containerButton}>
+            <Link href={"/history"}>
+              <button className={styles.buttonMyAccount}>
+                Acessar histórico
+              </button>
+            </Link>
+            <Link href={"/"}>
+              <button className={styles.buttonLogout} onClick={handleSignOut}>
+                Sair da conta
+              </button>
+            </Link>
+
+            <button className={styles.buttonLogout} onClick={handleDeleteAccount}>
+              Excluir conta
+            </button>
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-// export const getServerSideProps = canSSRAuth(async (context) => {
-//   return {
-//     props: {},
-//   };
-// });
+export const getServerSideProps = canSSRAuth(async (context) => {
+  return {
+    props: {},
+  };
+});
