@@ -2,7 +2,6 @@
 
 
 const dados = [
-
     {
         id: 1,
         value: 100,
