@@ -9,11 +9,11 @@ import styles from "./styles.module.scss";
 import globalStyles from "../../../styles/global.module.scss";
 import Link from "next/link";
 import SlideBar from "../../components/ui/SlideBar";
-import ModalSenha from "../../components/ui/ModalPassword";
+
 
 
 export default function myAccount() {
-  const { user, handleDeleteAccount } = useContext(AuthContext);
+  const { user, handleDeleteAccount} = useContext(AuthContext);
   const [visible, setVisible] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -22,8 +22,12 @@ export default function myAccount() {
     toast.success("Deslogado com sucesso! 👋");
   }
 
+  function changePassword() {
+    alert('gustavo gay')
+  }
+
   return (
-    <div className={modalVisible ? styles.containerModal : styles.container}>
+    <div className={styles.container}>
       <div className={globalStyles.containerLogoAccount}>
         <button
           className={globalStyles.burguerContainer}
@@ -48,15 +52,31 @@ export default function myAccount() {
           </div>
           <div className={styles.containerElementos}>
             <p>Senha: **********</p>
-            <button
-              className={styles.buttonSenha}
-              onClick={() => setModalVisible(true)}
-            >
-              <ModalSenha
-                modalVisible={modalVisible}
-                onClose={() => setModalVisible(false)}
-              />
-            </button>
+            // --------- modal --------//
+            {modalVisible ? <div className={modalVisible ? styles.containerModal : styles.container} >
+              <div className={styles.contentModal}>
+                <h1>Trocar Senha</h1>
+                <div className={styles.inputContainerModal}>
+                  <label>Senha Atual: </label>
+                  <input type="password" className={styles.inputs} placeholder="Digite sua senha atual" />
+                </div>
+                <div className={styles.inputContainerModal}>
+                  <label>Nova Senha: </label>
+                  <input type="password" className={styles.inputs} placeholder="Digite sua nova senha" />
+                </div>
+                <button onClick={() => changePassword() }>Confirmar</button>
+
+                <button onClick={() => setModalVisible(false)}>Cancelar</button>
+
+              </div>
+            </div>
+              : <a
+                className={styles.buttonSenha}
+                onClick={() => setModalVisible(true)}
+              >
+                <FaEraser width={20} />
+              </a>}
+
           </div>
           <div className={styles.containerElementos}>
             <p>Minha matricula:</p>

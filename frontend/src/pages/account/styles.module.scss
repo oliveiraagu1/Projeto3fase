@@ -1,10 +1,47 @@
-@import '../../../styles/_vars.scss';
+@import '../../../styles/global.module.scss' ;
+
+
+
 
 .container{
     background: radial-gradient($dark-green, $green);
     max-width: 100vw;
     height: 100vh;
 }
+
+//------------------modal
+.containerModal{
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    background: $dark-pink;
+    
+    @extend .modal;
+
+    button{
+        @extend .button
+    }
+}
+.contentModal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+.inputContainerModal{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.inputs {
+    @extend .input
+}
+
 //------------------foto
 .photo{
     display: flex;
@@ -61,6 +98,8 @@
     display: flex;
     justify-content: space-between;
     max-width: 150px;
+    align-items: center;
+
 }
 .buttonSenha{
     border: none;
