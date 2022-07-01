@@ -4,14 +4,18 @@ import { FaArrowLeft } from "react-icons/fa";
 import { canSSRAuth } from "../../utils/canSSRAuth";
 import { AiOutlineEdit } from "react-icons/ai";
 import { setupAPIClient } from "../../services/api";
+import { format, parseISO, addDays, nextDay } from "date-fns";
 import Link from "next/link";
 import Head from "next/head";
 import styles from "./styles.module.scss";
-import globalStyles from "../../../styles/global.module.scss"
+import globalStyles from "../../../styles/global.module.scss";
 import SlideBar from "../../components/ui/SlideBar";
 
 export default function HistoryId({ historyContract }) {
   const [visible, setVisible] = useState(false);
+
+  const data = historyContract.contractDate;
+  const dateFormat = format(new Date(data), 'dd/MM/yyyy');
 
   return (
     <div className={visible ? styles.container : styles.containerClose}>
@@ -53,7 +57,8 @@ export default function HistoryId({ historyContract }) {
             <div className={styles.inputContainer}>
               <input
                 className={styles.input}
-                placeholder="Casa Vargem Grande"
+                value={historyContract.name}
+                disabled
               />
               <AiOutlineEdit size={15} className={styles.editIcon} />
             </div>
@@ -61,29 +66,41 @@ export default function HistoryId({ historyContract }) {
 
           <div className={styles.contractContent}>
             <label>Matricula Funcionário:</label>
-            <div className={styles.input}>
-              <label>241232</label>
-            </div>
+            <input
+              className={styles.input}
+              value={historyContract.registration}
+              disabled
+            />
           </div>
 
           <div className={styles.contractContent}>
             <label>Data:</label>
             <div className={styles.inputContainer}>
-              <input className={styles.input} placeholder="24/04/2021" />
+              <input
+                className={styles.input}
+                value={dateFormat}
+                disabled
+              />
               <AiOutlineEdit size={15} className={styles.editIcon} />
             </div>
           </div>
           <div className={styles.contractContent}>
             <label>Código do Imóvel:</label>
-            <div className={styles.input}>
-              <label>1231232</label>
-            </div>
+            <input
+              className={styles.input}
+              value={historyContract.propertyCode}
+              disabled
+            />
           </div>
 
           <div className={styles.contractContent}>
             <label>Tipo de Imóvel:</label>
             <div className={styles.inputContainer}>
-              <input className={styles.input} placeholder="Casa" />
+            <input
+              className={styles.input}
+              value={historyContract.typeAgreement === 1 ? "Venda" : "Aluguel"}
+              disabled
+            />
               <AiOutlineEdit size={15} className={styles.editIcon} />
             </div>
           </div>
@@ -91,7 +108,13 @@ export default function HistoryId({ historyContract }) {
           <div className={styles.contractContent}>
             <label>Tipo de Contrato:</label>
             <div className={styles.inputContainer}>
-              <input className={styles.input} placeholder="Alguel" />
+              <input
+                className={styles.input}
+                value={
+                  historyContract.typeProperty === 1 ? "Casa" : "Apartamento"
+                }
+                disabled
+              />
               <AiOutlineEdit size={15} className={styles.editIcon} />
             </div>
           </div>
