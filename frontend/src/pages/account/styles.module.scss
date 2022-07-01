@@ -1,28 +1,27 @@
-@import '../../../styles/global.module.scss' ;
+@import "../../../styles/global.module.scss";
 
-
-
-
-.container{
+.container {
     background: radial-gradient($dark-green, $green);
     max-width: 100vw;
     height: 100vh;
 }
 
 //------------------modal
-.containerModal{
+.containerModal {
+    height: fit-content;
+    width: 500px;
     position: absolute;
-    top: 20%;
-    left: 35%;
-    background: $dark-pink;
-    
+    top: 15%;
+    left: 31.5%;
+    background: $white-pure;
+
     @extend .modal;
 
-    button{
-        @extend .button
+    button {
+        @extend .button;
     }
 }
-.contentModal{
+.contentModal {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,32 +29,64 @@
     width: 100%;
     flex-direction: column;
     gap: 10px;
-    
 }
-.inputContainerModal{
+.inputContainerModal {
     width: 70%;
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
 .inputs {
-    @extend .input
+    border: 1px solid #000;
+    @extend .input;
+}
+.containerTitle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-start;
+    padding: 20px;
+    .arrow {
+        margin-left: 25px;
+    }
+
+    h1 {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        left: 30%;
+    }
+}
+.arrow:hover {
+    transition: 0.3s;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.modalWithOpacity{
+    background-color: rgba(0, 0, 0, 0.2);
+    @extend .modal
+}
+.pageOpacity{
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
 }
 
 //------------------foto
-.photo{
+.photo {
     display: flex;
     justify-content: center;
     padding-top: 20px;
 }
 //-------------botões
-.containerButton{
+.containerButton {
     display: flex;
     justify-content: space-between;
     width: calc(100% - 10%);
     margin: 0 auto;
 }
-.buttonMyAccount{
+.buttonMyAccount {
     background: transparent;
     border: 1px solid $dark-green;
     height: 40px;
@@ -66,7 +97,7 @@
     padding: 0 20px;
     cursor: pointer;
 }
-.buttonLogout{
+.buttonLogout {
     border: 1px solid $dark-green;
     height: 40px;
     border-radius: 20px;
@@ -77,39 +108,38 @@
     background: transparent;
     cursor: pointer;
 }
-.buttonLogout:hover{
+.buttonLogout:hover {
     background-color: $error;
     color: $white-pure;
 }
 //-------------container de dados
 
-.dados{
+.dados {
     margin: 20px auto;
     width: calc(100% - 80px);
 }
-.dados p{
+.dados p {
     font-size: 14px;
     font-family: $primaryFont;
     font-weight: $fontMedium;
     color: $black;
     padding: 5px 0;
 }
-.containerElementos{
+.containerElementos {
     display: flex;
     justify-content: space-between;
     max-width: 150px;
     align-items: center;
-
 }
-.buttonSenha{
+.buttonSenha {
     border: none;
     background: none;
 }
-@media(max-width: 768px){
-    .modalAccount{
+@media (max-width: 768px) {
+    .modalAccount {
         margin: 0 20px;
     }
-    .buttonLogout{
+    .buttonLogout {
         margin-left: 20px;
     }
 }
