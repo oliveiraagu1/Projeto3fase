@@ -16,10 +16,6 @@
     background: $white-pure;
 
     @extend .modal;
-
-    button {
-        @extend .button;
-    }
 }
 .contentModal {
     display: flex;
@@ -36,10 +32,7 @@
     flex-direction: column;
     gap: 5px;
 }
-.inputs {
-    border: 1px solid #000;
-    @extend .input;
-}
+
 .containerTitle {
     display: flex;
     flex-direction: row;

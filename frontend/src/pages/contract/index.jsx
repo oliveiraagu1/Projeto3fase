@@ -37,7 +37,7 @@ export default function Contract() {
       </main>
 
       <footer className={styles.footer}>
-        <p>{user.name}</p>
+        <p className={globalStyles.nameFooter}>eu sou o milior</p>
       </footer>
     </div>
   );
