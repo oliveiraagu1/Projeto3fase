@@ -95,7 +95,7 @@ export function AuthProvider({ children }) {
 
   async function createContract({
     name,
-    date,
+    contractDate,
     typeProperty,
     registration,
     propertyCode,
@@ -105,7 +105,7 @@ export function AuthProvider({ children }) {
     try {
       await api.post("contract/created", {
         name,
-        date,
+        contractDate,
         typeProperty,
         registration,
         propertyCode,
