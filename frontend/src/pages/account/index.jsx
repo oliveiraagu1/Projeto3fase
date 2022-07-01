@@ -1,7 +1,7 @@
 import { LogoMenor } from "../../components/Logo";
 import { AuthContext } from "../../contexts/AuthContext";
 import { useContext, useState } from "react";
-import { FaEraser, FaUserAlt } from "react-icons/fa";
+import { FaEraser, FaUserAlt, FaArrowLeft } from "react-icons/fa";
 import { AiOutlineUser } from "react-icons/ai";
 import { destroyCookie } from "nookies";
 import { toast } from "react-toastify";
@@ -28,7 +28,8 @@ export default function myAccount() {
 
   return (
     <div className={styles.container}>
-      <div className={globalStyles.containerLogoAccount}>
+      <div  className={modalVisible ? styles.pageOpacity : "" }>
+
         <button
           className={globalStyles.burguerContainer}
           onClick={() => setVisible(!visible)}
@@ -38,7 +39,7 @@ export default function myAccount() {
         <div className={globalStyles.containerLogoAccount}>
           <LogoMenor />
         </div>
-        <div className={globalStyles.modal}>
+        <div className={modalVisible ? styles.modalWithOpacity  : globalStyles.modal }>
           <div className={styles.photo}>
             <AiOutlineUser size={50} />
           </div>
@@ -53,22 +54,26 @@ export default function myAccount() {
             </div>
             <div className={styles.containerElementos}>
               <p>Senha: **********</p>
-            // --------- modal --------//
               {modalVisible ? <div className={modalVisible ? styles.containerModal : styles.container} >
-                <div className={styles.contentModal}>
-                  <h1>Trocar Senha</h1>
-                  <div className={styles.inputContainerModal}>
-                    <label>Senha Atual: </label>
-                    <input type="password" className={styles.inputs} placeholder="Digite sua senha atual" />
-                  </div>
-                  <div className={styles.inputContainerModal}>
-                    <label>Nova Senha: </label>
-                    <input type="password" className={styles.inputs} placeholder="Digite sua nova senha" />
-                  </div>
-                  <button onClick={() => changePassword()}>Confirmar</button>
+                <div>
 
-                  <button onClick={() => setModalVisible(false)}>Cancelar</button>
-
+                  <div className={styles.contentModal}>
+                    <div className={styles.containerTitle}>
+                      <a onClick={() => setModalVisible(false)} className={styles.arrow}>
+                        <FaArrowLeft />
+                      </a>
+                      <h1>Trocar Senha</h1>
+                    </div>
+                    <div className={styles.inputContainerModal}>
+                      <label>Senha Atual: </label>
+                      <input type="password" className={styles.inputs} placeholder="Digite sua senha atual" />
+                    </div>
+                    <div className={styles.inputContainerModal}>
+                      <label>Nova Senha: </label>
+                      <input type="password" className={styles.inputs} placeholder="Digite sua nova senha" />
+                    </div>
+                    <button onClick={() => changePassword()}>Confirmar</button>
+                  </div>
                 </div>
               </div>
                 : <a
@@ -106,8 +111,8 @@ export default function myAccount() {
   );
 }
 
-export const getServerSideProps = canSSRAuth(async (context) => {
-  return {
-    props: {},
-  };
-});
+// export const getServerSideProps = canSSRAuth(async (context) => {
+//   return {
+//     props: {},
+//   };
+// });
