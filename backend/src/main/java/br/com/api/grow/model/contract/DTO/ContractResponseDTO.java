@@ -4,7 +4,7 @@ import br.com.api.grow.model.contract.entity.ContractModel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @Getter
@@ -15,7 +15,7 @@ public class ContractResponseDTO {
     private String name;
 
 
-    private Date date;
+    private LocalDate contractDate;
 
 
     private Integer typeProperty;
@@ -35,7 +35,7 @@ public class ContractResponseDTO {
         return new ContractResponseDTO(
                 contractModel.getId(),
                 contractModel.getName(),
-                contractModel.getDate(),
+                contractModel.getContractDate(),
                 contractModel.getTypeProperty(),
                 contractModel.getRegistration(),
                 contractModel.getPropertyCode(),

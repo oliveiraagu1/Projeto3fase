@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Getter
@@ -25,7 +25,7 @@ public class ContractModel {
     private String name;
 
     @Column(nullable = false)
-    private Date date;
+    private LocalDate contractDate;
 
     @Column(nullable = false)
     private Integer typeProperty;
@@ -44,7 +44,7 @@ public class ContractModel {
 
     public ContractModel(
             String name,
-            Date date,
+            LocalDate contractDate,
             Integer typeProperty,
             Integer registration,
             Integer propertyCode,
@@ -52,7 +52,7 @@ public class ContractModel {
             Long userId
             ) {
         this.name = name;
-        this.date = date;
+        this.contractDate = contractDate;
         this.typeProperty = typeProperty;
         this.registration = registration;
         this.propertyCode = propertyCode;

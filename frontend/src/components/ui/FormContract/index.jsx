@@ -14,7 +14,7 @@ const schema = yup
       .string()
       .min(3, "A matrícula precisa ter no mínimo 3 caracteres")
       .required("Campo obrigatório!"),
-    date: yup.string().required("Campo obrigátorio!"),
+    contractDate: yup.string().required("Campo obrigátorio!"),
     propertyCode: yup.string().required("Campo obrigátorio!"),
     typeProperty: yup.string().required("Campo obrigátorio!"),
     typeAgreement: yup.string().required("Campo obrigátorio!"),
@@ -80,15 +80,15 @@ export function FormContract() {
         <div className={styles.content}>
           <label className={styles.textLogin}>Data:</label>
           <input
-            {...register("date")}
+            {...register("contractDate")}
             className={
-              errors.date?.type === "required"
+              errors.contractDate?.type === "required"
                 ? globalStyles.inputError
                 : globalStyles.input
             }
             type="date"
           />
-          <p className={styles.errors}>{errors.date?.message}</p>
+          <p className={styles.errors}>{errors.contractDate?.message}</p>
         </div>
         <div className={styles.content}>
           <label className={styles.textLogin}>Código do imóvel:</label>
