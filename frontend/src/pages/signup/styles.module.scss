@@ -1,5 +1,5 @@
-@import '../../../styles/_vars.scss';
-
+@import "../../../styles/_vars.scss";
+@import "../../../styles/global.module.scss";
 
 .container {
   background-image: linear-gradient(to right, $pink, $dark-green);
@@ -11,14 +11,12 @@
 .main {
   border-radius: 40px;
   background: $semi-transparent;
-  height: 800px;
+  height: fit-content;
   width: 440px;
   margin: 20px auto;
 
   h1 {
-    margin-top: 40px;
-    margin-bottom: 30px;
-    margin-left: 40px;
+    margin: 20px 0px 10px 40px;
   }
 }
 .modalContainerMain {
@@ -27,20 +25,31 @@
   justify-content: center;
   align-items: center;
 }
-.link {
-  margin: 0 auto;
+.containerHeader {
   display: flex;
-  justify-content: center;
-  align-items: center;
-
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: flex-start;
+}
+.link {
+  color: #000;
+  margin: 0 26% 0px 8%;
+  cursor: pointer;
   &:hover {
+    transition: 0.4s;
     transform: scale(1.2);
-    padding-left: 35px;
+    padding-left: 0;
   }
 }
 
-@media(max-width: 768px){
-  .main{
+.logoMenor {
+  display: block !important ;
+  justify-content: none !important ;
+  align-items: none !important ;
+}
+
+@media (max-width: 768px) {
+  .main {
     width: 100%;
     margin: 0 20px;
   }

@@ -94,15 +94,15 @@ export default function Home() {
       </div>
 
       <footer className={styles.footer}>
-        <p className={styles.nameFooter}>{user.name}</p>
+        <p className={globalStyles.nameFooter}>eu so o milior</p>
       </footer>
     </section>
   );
 }
 
-export const getServerSideProps = canSSRAuth(async (context) => {
+// export const getServerSideProps = canSSRAuth(async (context) => {
   
-  return {
-    props: {},
-  };
-});
+//   return {
+//     props: {},
+//   };
+// });

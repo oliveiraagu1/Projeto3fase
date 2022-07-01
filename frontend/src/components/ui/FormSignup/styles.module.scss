@@ -1,18 +1,24 @@
 @import '../../../../styles/vars';
+@import '../../../../styles/global.module.scss';
 
 .form {
   display: flex;
   flex-direction: column;
+  height: fit-content;
 }
-
+.link {
+  text-decoration: none;
+  color: $black;
+ @extend .button;
+ &:hover {
+  transform: scale(1);
+  padding-left: 0;
+}
+}
 .input {
   height: 40px;
-  border-radius: 5px;
-  color: var(--black);
-  padding: 10px;
-  width: 80%;
-  margin: 0 auto;
-  border: none;
+  width: 76%;
+  @extend .input
 }
 .input::placeholder {
   color: var(--black);
@@ -25,4 +31,9 @@
   padding: 20px 0 8px 0;
   width: 80%;
   margin: 0 auto;
+}
+.buttonsContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }

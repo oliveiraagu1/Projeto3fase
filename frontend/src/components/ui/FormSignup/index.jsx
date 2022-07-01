@@ -1,11 +1,12 @@
 import { useState, useContext } from "react";
-import styles from "./styles.module.scss";
-import globalStyles from "../../../../styles/global.module.scss";
-import Button from "../Button";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { AuthContext } from "../../../contexts/AuthContext";
+import styles from "./styles.module.scss";
+import globalStyles from "../../../../styles/global.module.scss";
+import Button from "../Button";
 import * as yup from "yup";
+
 
 const schema = yup
   .object({
@@ -60,7 +61,7 @@ export function FormSignup() {
         type="text"
         placeholder="Digite o seu e-mail"
       />
-      <p className={styles.errors}>{errors.email?.message}</p>
+      <p className={globalStyles.errors}>{errors.email?.message}</p>
 
       <label className={styles.textLogin}>Nome:</label>
       <input
@@ -73,7 +74,7 @@ export function FormSignup() {
         type="text"
         placeholder="Digite o seu nome completo"
       />
-      <p className={styles.errors}>{errors.name?.message}</p>
+      <p className={globalStyles.errors}>{errors.name?.message}</p>
 
       <label className={styles.textLogin}>Senha:</label>
       <input
@@ -87,7 +88,7 @@ export function FormSignup() {
         type="password"
         placeholder="Digite a sua senha"
       />
-      <p className={styles.errors}>{errors.password?.message}</p>
+      <p className={globalStyles.errors}>{errors.password?.message}</p>
 
       <label className={styles.textLogin}>Matrícula:</label>
       <input
@@ -101,13 +102,15 @@ export function FormSignup() {
         type="number"
         placeholder="Digite a sua matrícula"
       />
-      <p className={styles.errors}>{errors.registration?.message}</p>
+      <p className={globalStyles.errors}>{errors.registration?.message}</p>
 
       <label className={styles.textLogin}>Cargo:</label>
       <select
         {...register("idRole")}
         className={
-          errors.idRole?.type === "required" ? globalStyles.inputError : globalStyles.input
+          errors.idRole?.type === "required"
+            ? styles.inputError
+            : styles.input
         }
       >
         <option value="">Selecione</option>
@@ -116,10 +119,11 @@ export function FormSignup() {
         <option value="3">Visitante</option>
       </select>
       <p className={globalStyles.errors}>{errors.idRole?.message}</p>
-
-      <Button className={styles.button} loading={loading} type="submit">
+        <div className={styles.buttonsContainer}>
+      <Button className={globalStyles.button} loading={loading} type="submit">
         CADASTRAR
       </Button>
+        </div>
     </form>
   );
 }

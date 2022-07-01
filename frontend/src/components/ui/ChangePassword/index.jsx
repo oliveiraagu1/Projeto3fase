@@ -43,7 +43,7 @@ export function ChangePassword() {
       <label className={styles.textOldPassword}>Senha Atual:</label>
       <input
         {...register("oldPassword")}
-        className={errors.oldPassword?.type === 'required' || errors.oldPassword?.type === 'min'  ? globalStyles.inputError : globalStyles.input}
+        className={errors.oldPassword?.type === 'required' || errors.oldPassword?.type === 'min'  ? globalStyles.inputError : styles.inputs}
         type="password"
         placeholder="Digite a senha atual"
       />
@@ -52,13 +52,13 @@ export function ChangePassword() {
       <label className={styles.textNewPassword}>Nova Senha:</label>
       <input
         {...register("newPassword")}
-        className={errors.newPassword?.type === 'required' || errors.newPassword?.type === 'min'  ? globalStyles.inputError : globalStyles.input}
+        className={errors.newPassword?.type === 'required' || errors.newPassword?.type === 'min'  ? globalStyles.inputError : styles.inputs}
         type="password"
         placeholder="Digite a sua nova senha"
       />
       <p className={styles.errors}>{errors.newPassword?.message}</p>
 
-      <Button className={styles.button} loading={loading} type="submit">
+      <Button className={styles.send} loading={loading} type="submit">
         CONFIRMAR
       </Button>
     </form>
