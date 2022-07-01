@@ -16,12 +16,12 @@ export default function SignUp() {
 
         <div className={styles.modalContainerMain}>
           <main className={styles.main}>
-        <div className={styles.containerHeader}>
-        <Link href={"/home"}>
-          <FaArrowLeft className={styles.link} />
-        </Link>
-            <LogoMenor className={styles.logoMenor} />
-        </div>
+            <div className={styles.containerHeader}>
+              <Link href={"/home"}>
+                <FaArrowLeft className={styles.link} />
+              </Link>
+              <LogoMenor className={styles.logoMenor} />
+            </div>
 
             <h1>Cadastro</h1>
 
@@ -33,11 +33,8 @@ export default function SignUp() {
   );
 }
 
-// export const getServerSideProps = canSSRAuth(async (context) => {
-
-//     return {
-//         props: {
-
-//         }
-//     }
-// })
+export const getServerSideProps = canSSRAuth(async (context) => {
+  return {
+    props: {},
+  };
+});

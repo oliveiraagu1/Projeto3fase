@@ -46,7 +46,7 @@ export function AuthProvider({ children }) {
       });
 
       setCookie(undefined, "@nextauth.token", token, {
-        maxAge: 360000, // Expirar em 5 minutos
+        maxAge: 360000, // Expirar em 6 minutos
         path: "/", // Quais caminhos terão acesso ao cookie
       });
 

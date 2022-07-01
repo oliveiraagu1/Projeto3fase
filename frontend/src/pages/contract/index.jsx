@@ -37,19 +37,19 @@ export default function Contract() {
       </main>
 
       <footer className={styles.footer}>
-        <p className={globalStyles.nameFooter}>eu sou o milior</p>
+        <p className={globalStyles.nameFooter}>{user.name}</p>
       </footer>
     </div>
   );
 }
 
 
-// export const getServerSideProps = canSSRAuth(async (context) => {
+export const getServerSideProps = canSSRAuth(async (context) => {
 
-//   return{
-//     props: {}
-//   }
+  return{
+    props: {}
+  }
 
-// })
+})
 
 

@@ -1,15 +1,16 @@
 import { LogoMenor } from "../../components/Logo";
 import { AuthContext } from "../../contexts/AuthContext";
 import { useContext, useState } from "react";
-import { FaEraser, FaUserAlt, FaArrowLeft } from "react-icons/fa";
+import { FaEraser, FaArrowLeft } from "react-icons/fa";
 import { AiOutlineUser } from "react-icons/ai";
 import { destroyCookie } from "nookies";
 import { toast } from "react-toastify";
+import { ChangePassword } from "../../components/ui/ChangePassword";
+import { canSSRAuth } from "../../utils/canSSRAuth";
 import styles from "./styles.module.scss";
 import globalStyles from "../../../styles/global.module.scss";
 import Link from "next/link";
 import SlideBar from "../../components/ui/SlideBar";
-import { ChangePassword } from "../../components/ui/ChangePassword";
 
 export default function myAccount() {
   const { user, handleDeleteAccount } = useContext(AuthContext);
@@ -118,8 +119,8 @@ export default function myAccount() {
   );
 }
 
-// export const getServerSideProps = canSSRAuth(async (context) => {
-//   return {
-//     props: {},
-//   };
-// });
+export const getServerSideProps = canSSRAuth(async (context) => {
+  return {
+    props: {},
+  };
+});
