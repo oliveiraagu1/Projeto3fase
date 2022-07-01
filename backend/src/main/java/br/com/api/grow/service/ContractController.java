@@ -1,4 +1,4 @@
-package br.com.api.grow.controller;
+package br.com.api.grow.service;
 
 import br.com.api.grow.model.contract.DTO.ContractDTO;
 import br.com.api.grow.model.contract.DTO.ContractGraphResponseDTO;

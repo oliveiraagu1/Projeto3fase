@@ -1,4 +1,4 @@
-package br.com.api.grow.controller;
+package br.com.api.grow.service;
 
 import br.com.api.grow.model.user.DTO.*;
 import br.com.api.grow.model.user.entity.UserModel;
