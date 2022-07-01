@@ -12,8 +12,7 @@ const schema = yup
     name: yup.string().required("Campo obrigatório!"),
     registration: yup
       .string()
-      .min(3, "A matrícula precisa ter no mínimo 3 caracteres")
-      .required("Campo obrigatório!"),
+      .min(3, "A matrícula precisa ter no mínimo 3 caracteres"),
     contractDate: yup.string().required("Campo obrigátorio!"),
     propertyCode: yup.string().required("Campo obrigátorio!"),
     typeProperty: yup.string().required("Campo obrigátorio!"),
