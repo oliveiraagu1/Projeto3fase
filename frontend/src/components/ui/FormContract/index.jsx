@@ -1,10 +1,10 @@
 import { useState, useContext } from "react";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+import { AuthContext } from "../../../contexts/AuthContext";
 import styles from "./styles.module.scss";
 import globalStyles from "../../../../styles/global.module.scss";
 import Button from "../Button";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { AuthContext } from "../../../contexts/AuthContext";
 import * as yup from "yup";
 
 const schema = yup
@@ -30,7 +30,7 @@ export function FormContract() {
     resolver: yupResolver(schema),
   });
 
-  const { createContract } = useContext(AuthContext);
+  const { createContract, user } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
 
   console.log(errors);
@@ -72,7 +72,8 @@ export function FormContract() {
                 : globalStyles.input
             }
             type="number"
-            placeholder="Digite sua matrícula"
+            value={user.registration}
+            disabled
           />
           <p className={styles.errors}>{errors.registration?.message}</p>
         </div>
