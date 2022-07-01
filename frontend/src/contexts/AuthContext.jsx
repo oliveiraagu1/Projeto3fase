@@ -78,19 +78,11 @@ export function AuthProvider({ children }) {
     }
   }
 
-  async function handleGraphic(){
-
-    try{
+  async function handleGraphic() {
+    try {
       const response = await api.get(`contract/${user.id}`);
-
       setGraphic(response.data);
-
-      toast.success("Seus contratos foram carregados com sucesso! 😄")
-      
-    }catch (err){
-      toast.error("Error ao carregar os contratos! 😥")
-    }
-    
+    } catch (err) {}
   }
 
   async function createContract({
@@ -101,7 +93,6 @@ export function AuthProvider({ children }) {
     propertyCode,
     typeAgreement,
   }) {
-
     try {
       await api.post("contract/created", {
         name,
@@ -114,24 +105,37 @@ export function AuthProvider({ children }) {
       });
       toast.success("Contrato criado com sucesso!");
       await Router.push("/home");
-
     } catch (err) {
       toast.error("Error ao cadastrar o contrato!");
     }
   }
 
-  async function handleDeleteAccount(){
-
-    try{
-      await api.delete(`user/delete/8`)
-      destroyCookie(undefined, "@nextauth.token");
-      toast.success("Sua conta foi deletada... 😥 Até breve!"); 
-      Router.push("/");
-    }catch (err){
-      toast.error("Error ao deletar a conta!");  
+  async function handleChangePassword({ oldPassword, newPassword }) {
+    try {
+      await api.put(`user/change/${user.id}`, {
+        email: user.email,
+        name: user.name,
+        oldPassword,
+        newPassword,
+        registration: user.registration,
+        idRole: user.roleId,
+      });
+      toast.success("Senha foi trocada com sucesso!");
+    } catch (err) {
+      toast.error("Error ao trocar de senha!");
     }
   }
 
+  async function handleDeleteAccount() {
+    try {
+      await api.delete(`user/delete/8`);
+      destroyCookie(undefined, "@nextauth.token");
+      toast.success("Sua conta foi deletada... 😥 Até breve!");
+      Router.push("/");
+    } catch (err) {
+      toast.error("Error ao deletar a conta!");
+    }
+  }
 
   return (
     <AuthContext.Provider
@@ -145,7 +149,8 @@ export function AuthProvider({ children }) {
         handleDeleteAccount,
         handleGraphic,
         graphic,
-        setGraphic
+        setGraphic,
+        handleChangePassword,
       }}
     >
       {children}

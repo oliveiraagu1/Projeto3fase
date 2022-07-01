@@ -9,8 +9,7 @@ import styles from "./styles.module.scss";
 import globalStyles from "../../../styles/global.module.scss";
 import Link from "next/link";
 import SlideBar from "../../components/ui/SlideBar";
-
-
+import { ChangePassword } from "../../components/ui/ChangePassword";
 
 export default function myAccount() {
   const { user, handleDeleteAccount } = useContext(AuthContext);
@@ -23,13 +22,12 @@ export default function myAccount() {
   }
 
   function changePassword() {
-    alert('gustavo gay')
+    alert("gustavo gay");
   }
 
   return (
     <div className={styles.container}>
-      <div  className={modalVisible ? styles.pageOpacity : "" }>
-
+      <div className={modalVisible ? styles.pageOpacity : ""}>
         <button
           className={globalStyles.burguerContainer}
           onClick={() => setVisible(!visible)}
@@ -39,7 +37,11 @@ export default function myAccount() {
         <div className={globalStyles.containerLogoAccount}>
           <LogoMenor />
         </div>
-        <div className={modalVisible ? styles.modalWithOpacity  : globalStyles.modal }>
+        <div
+          className={
+            modalVisible ? styles.modalWithOpacity : globalStyles.modal
+          }
+        >
           <div className={styles.photo}>
             <AiOutlineUser size={50} />
           </div>
@@ -54,35 +56,37 @@ export default function myAccount() {
             </div>
             <div className={styles.containerElementos}>
               <p>Senha: **********</p>
-              {modalVisible ? <div className={modalVisible ? styles.containerModal : styles.container} >
-                <div>
-
-                  <div className={styles.contentModal}>
-                    <div className={styles.containerTitle}>
-                      <a onClick={() => setModalVisible(false)} className={styles.arrow}>
-                        <FaArrowLeft />
-                      </a>
-                      <h1>Trocar Senha</h1>
+              {modalVisible ? (
+                <div
+                  className={
+                    modalVisible ? styles.containerModal : styles.container
+                  }
+                >
+                  <div>
+                    <div className={styles.contentModal}>
+                      <div className={styles.containerTitle}>
+                        <a
+                          onClick={() => setModalVisible(false)}
+                          className={styles.arrow}
+                        >
+                          <FaArrowLeft />
+                        </a>
+                        <h1>Trocar Senha</h1>
+                      </div>
+                      <div className={styles.inputContainerModal}>
+                        <ChangePassword />
+                      </div>
                     </div>
-                    <div className={styles.inputContainerModal}>
-                      <label>Senha Atual: </label>
-                      <input type="password" className={styles.inputs} placeholder="Digite sua senha atual" />
-                    </div>
-                    <div className={styles.inputContainerModal}>
-                      <label>Nova Senha: </label>
-                      <input type="password" className={styles.inputs} placeholder="Digite sua nova senha" />
-                    </div>
-                    <button onClick={() => changePassword()}>Confirmar</button>
                   </div>
                 </div>
-              </div>
-                : <a
+              ) : (
+                <a
                   className={styles.buttonSenha}
                   onClick={() => setModalVisible(true)}
                 >
                   <FaEraser width={20} />
-                </a>}
-
+                </a>
+              )}
             </div>
             <div className={styles.containerElementos}>
               <p>Minha matricula:</p>
@@ -101,7 +105,10 @@ export default function myAccount() {
               </button>
             </Link>
 
-            <button className={styles.buttonLogout} onClick={handleDeleteAccount}>
+            <button
+              className={styles.buttonLogout}
+              onClick={handleDeleteAccount}
+            >
               Excluir conta
             </button>
           </div>
