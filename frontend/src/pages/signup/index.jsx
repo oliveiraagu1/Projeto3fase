@@ -33,8 +33,8 @@ export default function SignUp() {
   );
 }
 
-export const getServerSideProps = canSSRAuth(async (context) => {
-  return {
-    props: {},
-  };
-});
+// export const getServerSideProps = canSSRAuth(async (context) => {
+//   return {
+//     props: {},
+//   };
+// });

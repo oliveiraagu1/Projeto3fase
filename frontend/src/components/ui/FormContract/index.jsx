@@ -1,10 +1,10 @@
 import { useState, useContext } from "react";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { useForm } from "react-hook-form";
-import { AuthContext } from "../../../contexts/AuthContext";
 import styles from "./styles.module.scss";
 import globalStyles from "../../../../styles/global.module.scss";
 import Button from "../Button";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { AuthContext } from "../../../contexts/AuthContext";
 import * as yup from "yup";
 
 const schema = yup
@@ -12,8 +12,9 @@ const schema = yup
     name: yup.string().required("Campo obrigatório!"),
     registration: yup
       .string()
-      .min(3, "A matrícula precisa ter no mínimo 3 caracteres"),
-    contractDate: yup.string().required("Campo obrigátorio!"),
+      .min(3, "A matrícula precisa ter no mínimo 3 caracteres")
+      .required("Campo obrigatório!"),
+    date: yup.string().required("Campo obrigátorio!"),
     propertyCode: yup.string().required("Campo obrigátorio!"),
     typeProperty: yup.string().required("Campo obrigátorio!"),
     typeAgreement: yup.string().required("Campo obrigátorio!"),
@@ -29,7 +30,7 @@ export function FormContract() {
     resolver: yupResolver(schema),
   });
 
-  const { createContract, user } = useContext(AuthContext);
+  const { createContract } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
 
   console.log(errors);
@@ -71,8 +72,7 @@ export function FormContract() {
                 : globalStyles.input
             }
             type="number"
-            value={user.registration}
-            disabled
+            placeholder="Digite sua matrícula"
           />
           <p className={styles.errors}>{errors.registration?.message}</p>
         </div>
@@ -80,15 +80,15 @@ export function FormContract() {
         <div className={styles.content}>
           <label className={styles.textLogin}>Data:</label>
           <input
-            {...register("contractDate")}
+            {...register("date")}
             className={
-              errors.contractDate?.type === "required"
+              errors.date?.type === "required"
                 ? globalStyles.inputError
                 : globalStyles.input
             }
             type="date"
           />
-          <p className={styles.errors}>{errors.contractDate?.message}</p>
+          <p className={styles.errors}>{errors.date?.message}</p>
         </div>
         <div className={styles.content}>
           <label className={styles.textLogin}>Código do imóvel:</label>
@@ -143,6 +143,10 @@ export function FormContract() {
           </Button>
         </div>
       </form>
+
     </div>
   );
 }
+
+
+

@@ -29,12 +29,12 @@
 }
 
 .lowOpacity{
-    background: rgb(0, 118, 135, 0.3);
+    background: rgb(255, 255, 255, 0.6);
     padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 5px;
+    border-radius: 25px;
 }
 .lowOpacity:hover {
     transition: 0.3s;
@@ -48,21 +48,21 @@
 }
 
 .fullOpacity{
-    background: $dark-green;
+    background: rgb(255, 255, 255, 0.6);
     padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 5px;
+    border-radius: 25px;
 }
 .fullOpacity:hover{
-    transition:0.3s;
-    background: rgb(0, 118, 135, 0.3);
+    transition: 0.3s;
+    background: rgb(0, 109, 119);
     transform: scale(1.1);
 }
 .fullOpacity:hover > .icon {
-    transition:0.6s;
-    fill: black;
+    transition: 0.6s;
+    fill: white;
 
 }
 
