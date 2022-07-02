@@ -119,8 +119,8 @@ export default function myAccount() {
   );
 }
 
-// export const getServerSideProps = canSSRAuth(async (context) => {
-//   return {
-//     props: {},
-//   };
-// });
+export const getServerSideProps = canSSRAuth(async (context) => {
+  return {
+    props: {},
+  };
+});
