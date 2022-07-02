@@ -127,7 +127,7 @@ export function AuthProvider({ children }) {
 
   async function handleDeleteAccount() {
     try {
-      await api.delete(`user/delete/8`);
+      await api.delete(`user/delete/${user.id}`);
       destroyCookie(undefined, "@nextauth.token");
       toast.success("Sua conta foi deletada... 😥 Até breve!");
       Router.push("/");

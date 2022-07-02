@@ -23,7 +23,7 @@ public class AuthenticatedFilterJWT extends OncePerRequestFilter {
 
         String token = request.getHeader("Authorization");
 
-        if(request.getRequestURI().contains("/user/session") || request.getMethod().equals("OPTIONS")){
+        if(request.getRequestURI().contains("/user/sessions") || request.getMethod().equals("OPTIONS")){
            filterChain.doFilter(request, response);
            return;
         }

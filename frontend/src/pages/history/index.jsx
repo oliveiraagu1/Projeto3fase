@@ -29,7 +29,7 @@ export default function History({ contractList }) {
         <SlideBar visible={visible} />
       </button>
 
-      <div className={styles.image}>
+      <div className={globalStyles.containerLogoAccount}>
         <LogoMenor />
       </div>
       <div className={styles.title}>

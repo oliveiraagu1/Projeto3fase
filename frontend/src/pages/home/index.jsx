@@ -61,27 +61,14 @@ export default function Home() {
               : styles.containerHistoricoClosed
           }
         >
-          <Link href={"/history"}>
-            <button className={styles.historicoUm}>
-              <h1>#01</h1>
-              <h2>Aluguel 10293</h2>
-              <h2>10/04/2022</h2>
-            </button>
-          </Link>
-          <Link href={"/history"}>
-            <button className={styles.historicoDois}>
-              <h1>#02</h1>
-              <h2>Aluguel 24002</h2>
-              <h2>03/04/2022</h2>
-            </button>
-          </Link>
-          <Link href={"/history"}>
-            <button className={styles.historicoDois}>
-              <h1>#03</h1>
-              <h2>Aluguel 11583</h2>
-              <h2>27/03/2022</h2>
-            </button>
-          </Link>
+            <div className={styles.ContainerDicas}>
+              <p>“O talento vence jogos, mas só o trabalho em equipe ganha campeonatos.”</p>
+              <p>Michael Jordan</p>
+            </div>
+            <div className={styles.ContainerDicas}>
+              <p>“O sucesso nas vendas é resultado de disciplina, dedicação e sacrifício.”</p>
+              <p>Thomas Roy Cromwell</p>
+            </div>
         </div>
 
         <div className={styles.grow}>

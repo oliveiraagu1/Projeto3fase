@@ -39,6 +39,7 @@
   h1 {
     font-size: 64px;
     margin: 0 auto;
+    font-family: $primaryFont;
   }
 }
 .empty{
@@ -49,6 +50,7 @@
   span {
     font-size: 30px;
     color: $white;
+    font-family: $primaryFont;
   }
 }
 
@@ -69,7 +71,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+  font-family: $primaryFont;
 
   p {
     font-size: 25px;
@@ -79,6 +82,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    font-family: $primaryFont;
   }
 }
 .formContainer{

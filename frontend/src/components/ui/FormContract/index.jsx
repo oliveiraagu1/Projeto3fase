@@ -1,18 +1,15 @@
 import { useState, useContext } from "react";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { useForm } from "react-hook-form";
-import { AuthContext } from "../../../contexts/AuthContext";
 import styles from "./styles.module.scss";
 import globalStyles from "../../../../styles/global.module.scss";
 import Button from "../Button";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { AuthContext } from "../../../contexts/AuthContext";
 import * as yup from "yup";
 
 const schema = yup
   .object({
     name: yup.string().required("Campo obrigatório!"),
-    registration: yup
-      .string()
-      .min(3, "A matrícula precisa ter no mínimo 3 caracteres"),
     contractDate: yup.string().required("Campo obrigátorio!"),
     propertyCode: yup.string().required("Campo obrigátorio!"),
     typeProperty: yup.string().required("Campo obrigátorio!"),
@@ -143,6 +140,10 @@ export function FormContract() {
           </Button>
         </div>
       </form>
+
     </div>
   );
 }
+
+
+

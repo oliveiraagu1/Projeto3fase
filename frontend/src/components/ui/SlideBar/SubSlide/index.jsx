@@ -39,7 +39,7 @@ export default function SubSlide() {
 
           <Link href={"/account"}>
             <div className={styles.fullOpacity}>
-              <FaUserAlt size={20} color={"white"} className={styles.icon} />
+              <FaUserAlt size={20} className={styles.icon} />
               <a className={styles.button}>Meu Perfil</a>
               <FaChevronRight size={15} />
             </div>
@@ -55,7 +55,7 @@ export default function SubSlide() {
 
           <Link href={"/contract"}>
             <div className={styles.fullOpacity}>
-              <FaWpforms size={20} color={"white"}  className={styles.icon} />
+              <FaWpforms size={20} className={styles.icon} />
               <a className={styles.button}>Adicionar Contrato</a>
               <FaChevronRight size={15} />
             </div>
